@@ -112,6 +112,10 @@ public class BaseMobAi : MonoBehaviour
         InvokeRepeating("StartTree", 0f, 0.5f);
     }
 
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+    }
     public int getHealth()
     {
         return health;

@@ -132,6 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 392699664}
   - component: {fileID: 392699663}
+  - component: {fileID: 392699665}
   m_Layer: 0
   m_Name: Attack Hitbox
   m_TagString: Untagged
@@ -199,6 +200,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 680453870}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &392699665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392699662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e7b339fa2da5c2479ea7772df94a949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseMobAi: {fileID: 0}
 --- !u!1 &617927767
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,7 +580,7 @@ GameObject:
   - component: {fileID: 714788969}
   m_Layer: 0
   m_Name: TempEnemy (3)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1142,7 +1156,7 @@ GameObject:
   - component: {fileID: 1821419798}
   m_Layer: 0
   m_Name: TempEnemy (4)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1345,7 +1359,7 @@ GameObject:
   - component: {fileID: 1996884327}
   m_Layer: 0
   m_Name: TempEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1548,7 +1562,7 @@ GameObject:
   - component: {fileID: 2074582778}
   m_Layer: 0
   m_Name: TempEnemy (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1667,7 +1681,7 @@ GameObject:
   - component: {fileID: 2115775483}
   m_Layer: 0
   m_Name: TempEnemy (2)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
