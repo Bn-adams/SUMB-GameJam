@@ -9,30 +9,57 @@ using UnityEngine.Rendering;
 
 public class BaseMobAi : MonoBehaviour
 {
-    public int health;
+    public int H = 5;
+    public int AS = 2000;
+    public float MS = 5f;
+    public float AR = 1f;
+    public float VR = 3f;
+
     public bool isOnCoolDown;
+    public bool isRanged; 
     public NavMeshAgent agent;
-
-
     public BlackBoard bb;
-    float attackRange;
+    public GameObject projectile;
+
+
+    [HideInInspector] public int health;
+    [HideInInspector] public int attackSpeed;
+    [HideInInspector] public float attackRange;
+    [HideInInspector] public float moveSpeed;
+    [HideInInspector] public bool reloading; 
 
 
     private Node root;
 
 
+    CircleCollider2D cdr; 
+
+
     void Start()
     {
         Delayer(200);
-        isOnCoolDown = false;
+
         agent = GetComponent<NavMeshAgent>();
-        agent.updateUpAxis = false;
-        agent.updateRotation = false;
-        attackRange = 1;
-        health = 5;
+        cdr = GetComponent<CircleCollider2D>();
         bb = FindAnyObjectByType<BlackBoard>();
 
+        agent.updateUpAxis = false;
+        agent.updateRotation = false;
+
+        health = H;
+        attackSpeed = AS;
+        attackRange = AR;
+        moveSpeed = MS;
         agent.speed = 0;
+        isOnCoolDown = false;
+        reloading = false;
+
+        if (isRanged == false)
+        {
+            cdr.radius = AR;
+        }
+
+
 
         //root node, we begin 
         SelectorNode rootSelector = new SelectorNode(bb);
@@ -51,7 +78,7 @@ public class BaseMobAi : MonoBehaviour
         healthCheck.AddChildClass(detectionRangeCheck);
 
         //checks the range to the player for detection purposes, fails if player in range 
-        CheckDetectionRange checkDetectionRange = new CheckDetectionRange(this, bb, 3f);
+        CheckDetectionRange checkDetectionRange = new CheckDetectionRange(this, bb, VR);
         detectionRangeCheck.AddChildClass(checkDetectionRange);
 
         //sequence containing move to and check range 
@@ -70,11 +97,49 @@ public class BaseMobAi : MonoBehaviour
         CheckDetectionRange checkattackRange = new CheckDetectionRange(this, bb, attackRange);
         attackRangeCheck.AddChildClass(checkattackRange);
 
+        //checks if ranged attack
+        SelectorNode checkIsRanged = new SelectorNode(bb);
+        attackRangeCheck.AddChildClass(checkIsRanged);
+
         //attack action
         AttackPlayer attackPlayer = new AttackPlayer(this, bb);
-        attackRangeCheck.AddChildClass(attackPlayer);
+        checkIsRanged.AddChildClass(attackPlayer);
 
-        InvokeRepeating("StartTree", 0f, 2f);
+        //Ranged attack
+        RangedAttack rangedAttack = new RangedAttack(this, bb);
+        checkIsRanged.AddChildClass(rangedAttack);
+
+        InvokeRepeating("StartTree", 0f, 0.5f);
+    }
+
+    public int getHealth()
+    {
+        return health;
+    }
+
+    public float getMoveSpeed()
+    {
+        return moveSpeed;
+    }
+
+    public int getAttackSpeed()
+    {
+        return attackSpeed;
+    }
+
+    public bool IsRanged() 
+    {  
+        return isRanged;
+    }
+
+    public bool IsReloading()
+    {
+        return reloading;
+    }
+
+    public void decrementHealth()
+    {
+        health--; 
     }
 
     public void StartTree()
@@ -87,7 +152,14 @@ public class BaseMobAi : MonoBehaviour
         await Task.Delay(timer);
     }
 
-    private async void coolDown(int timer)
+    public async void RangedCooldown(int timer)
+    {
+        await Task.Delay(timer);
+        isOnCoolDown = false;
+        reloading = false;
+    }
+
+    public async void meleeCooldown(int timer)
     {
         await Task.Delay(timer);
         isOnCoolDown = false;
@@ -97,6 +169,13 @@ public class BaseMobAi : MonoBehaviour
     {
         Delayer(500);
         agent.SetDestination(bb.player.transform.position); 
+    }
+
+    public void FireProjectile()
+    {
+        var x = GameObject.Instantiate(projectile,this.transform);
+        
+        
     }
 
 }
@@ -113,8 +192,9 @@ public class CheckHealth : Node
     public override result Execute()
     {
         Debug.Log("checking health");
-        if(me.health <= 0)
+        if(me.getHealth() <= 0)
         {
+            Debug.Log("destroyed");
             GameObject.Destroy(me.gameObject);
             return result.Success;
         }
@@ -168,10 +248,19 @@ public class MoveToPlayer : Node
 
     public override result Execute()
     {
-        Debug.Log("moving to player");
 
-        me.agent.speed = 5;
-        return result.Success;
+
+        if (me.IsReloading() == false)
+        {
+            Debug.Log("moving to player");
+
+            me.agent.speed = me.getMoveSpeed();
+            return result.Success;
+        }
+        else
+        {
+            return result.Success;
+        }
     }
 
 
@@ -190,9 +279,57 @@ public class AttackPlayer : Node
 
     public override result Execute()
     {
-        Debug.Log("attack");
-        throw new System.NotImplementedException();
+        if (me.IsRanged() == false)
+        {
+            if (me.isOnCoolDown == false)
+            {
+                Debug.Log("attack");
+                me.isOnCoolDown = true;
+                me.meleeCooldown(me.getAttackSpeed());
+                return result.Success;
+            }
+            else
+            {
+                Debug.Log("cooldown");
+                return result.Failure;
+            }
+        }
+        else
+        {
+            return result.Failure;
+        }
     }
+}
+
+
+public class RangedAttack : Node
+{
+    private BaseMobAi me;
+    private BlackBoard bb;
+
+    public RangedAttack(BaseMobAi me, BlackBoard bb) : base(bb)
+    {
+        this.me = me;
+        this.bb = bb;
+    }
+
+    public override result Execute()
+    {
+        if(me.isOnCoolDown == false)
+        {
+            me.FireProjectile();
+            Debug.Log("shoot");
+            me.isOnCoolDown = true;
+            me.reloading = true;
+            me.RangedCooldown(me.getAttackSpeed());
+            return result.Success;
+        }
+        else
+        {
+            return result.Failure;
+        }
+    }
+
 }
 
 
