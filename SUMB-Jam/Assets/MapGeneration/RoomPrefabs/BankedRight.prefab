@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.43, y: -1.53, z: 0}
-  m_LocalScale: {x: -0.70832, y: 0.70832, z: 0.70832}
+  m_LocalScale: {x: -0.6081494, y: 0.6081494, z: 0.6081494}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3781242809831261624}
@@ -67,20 +67,22 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -5.4, y: 5.4}
-  - {x: -5, y: 5.4}
-  - {x: -4, y: 5.3}
-  - {x: -3, y: 5.1}
-  - {x: -2, y: 4.8}
-  - {x: -1, y: 4.4}
-  - {x: 0, y: 3.9}
-  - {x: 1, y: 3.2}
-  - {x: 2, y: 2.4}
-  - {x: 3, y: 1.3}
-  - {x: 4, y: -0.2}
-  - {x: 5, y: -2.5}
-  - {x: 5.3, y: -5.2}
-  - {x: 5.3, y: -5.4}
+  - {x: -6.5442343, y: 5.5472}
+  - {x: -5.999271, y: 5.5399184}
+  - {x: -5.3598213, y: 5.4723883}
+  - {x: -4.7069283, y: 5.399214}
+  - {x: -3.6010337, y: 5.217745}
+  - {x: -2.203852, y: 4.762936}
+  - {x: -1.1297243, y: 4.279542}
+  - {x: -0.18171424, y: 3.7738814}
+  - {x: 0.778186, y: 3.088397}
+  - {x: 1.7517802, y: 2.2223024}
+  - {x: 2.7433357, y: 1.1337821}
+  - {x: 3.7756307, y: -0.3425646}
+  - {x: 4.7922907, y: -2.6049619}
+  - {x: 5.140306, y: -3.7981372}
+  - {x: 5.3452196, y: -5.131876}
+  - {x: 5.363104, y: -6.3599777}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -111,7 +113,7 @@ Transform:
   m_GameObject: {fileID: 3018885546813593054}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 5.4, y: 3.8, z: 0}
+  m_LocalPosition: {x: 5.4, y: 3.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -236,24 +238,107 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -5.4, y: 5.4}
-  - {x: -5, y: 5.4}
-  - {x: -4, y: 5.3}
-  - {x: -3, y: 5.1}
+  - {x: -5.4, y: 5.340593}
+  - {x: -4.9891987, y: 5.335192}
+  - {x: -4, y: 5.256795}
+  - {x: -3.0270033, y: 5.083798}
   - {x: -2, y: 4.8}
   - {x: -1, y: 4.4}
   - {x: 0, y: 3.9}
+  - {x: 0.7338942, y: 3.4283993}
   - {x: 1, y: 3.2}
+  - {x: 1.3130722, y: 3.0067892}
   - {x: 2, y: 2.4}
+  - {x: 2.589849, y: 1.826235}
   - {x: 3, y: 1.3}
+  - {x: 3.8085423, y: 0.17629778}
   - {x: 4, y: -0.2}
-  - {x: 5, y: -2.5}
-  - {x: 5.3, y: -5.2}
-  - {x: 5.3, y: -5.4}
+  - {x: 4.557822, y: -1.2658843}
+  - {x: 4.967596, y: -2.516202}
+  - {x: 5.2653766, y: -4.013483}
+  - {x: 5.348606, y: -5.183798}
+  - {x: 5.364808, y: -5.372997}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!1 &6283921046928003822
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3145601604437292256}
+  - component: {fileID: 5575747031730412226}
+  m_Layer: 0
+  m_Name: BackTrackCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3145601604437292256
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6283921046928003822}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: 0.30397284, w: 0.9526807}
+  m_LocalPosition: {x: 0.96, y: 1.76, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3781242809831261624}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 35.393}
+--- !u!61 &5575747031730412226
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6283921046928003822}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.18349433}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 5.095595}
+  m_EdgeRadius: 0
 --- !u!1 &6937004979742790415
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,7 +365,7 @@ Transform:
   m_GameObject: {fileID: 6937004979742790415}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.8, y: -5.4, z: 0}
+  m_LocalPosition: {x: -3.6, y: -5.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -369,6 +454,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 3145601604437292256}
   - {fileID: 5086242134268189251}
   - {fileID: 6000761955518057113}
   - {fileID: 6339201551723099229}
@@ -416,12 +502,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2d7ee525bd0034549a01775b11c29205, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a5dc2b5fec30f9343bb71199dbd04bc8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10.8, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -442,6 +528,10 @@ MonoBehaviour:
   ExitNodes:
   - AnchorPoint: {fileID: 5086242134268189251}
     NotAvailable: 0
+    RoadBlockCollider: {fileID: 0}
+    BackTrackCollider: {fileID: 5575747031730412226}
   EntranceNodes:
   - AnchorPoint: {fileID: 6000761955518057113}
     NotAvailable: 0
+    RoadBlockCollider: {fileID: 0}
+    BackTrackCollider: {fileID: 0}

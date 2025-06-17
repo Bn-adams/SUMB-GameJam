@@ -19,4 +19,16 @@ public struct ConnectionNode
 
     public bool NotAvailable;
 
+    public BoxCollider2D RoadBlockCollider;
+
+    public BoxCollider2D BackTrackCollider;
+
+    public void DisableWall()
+    {
+        if(RoadBlockCollider != null)
+            RoadBlockCollider.enabled = false;
+        if(BackTrackCollider != null)
+            BackTrackCollider.enabled = true;
+    }
+
 }
