@@ -5,26 +5,39 @@ using UnityEngine.UIElements;
 
 public class MapGen : MonoBehaviour
 {
-    public List<GameObject> CurrentPeices = new List<GameObject>();
+    protected List<GameObject> CurrentPeices = new List<GameObject>();
+
+    public List<GameObject> LeftPrefabs = new List<GameObject>();
+
+    public List<GameObject> RightPrefabs = new List<GameObject>();
+
+    public List<GameObject> ForwardsPrefabs = new List<GameObject>();
 
     public List<GameObject> Prefabs = new List<GameObject>();
 
-    public List<ConnectionNode> HeaderNodes = new List<ConnectionNode>();
+    protected List<ConnectionNode> HeaderNodes = new List<ConnectionNode>();
 
-    public int DisplayLength = 2;
+    protected int DisplayLength = 2;
 
-    public GameObject StartingPeice;
+    public List<GameObject> StartingPeice = new List<GameObject>();
+
+    public List<GameObject> ShopPeice = new List<GameObject>();
+
+    protected int DirectionPointer = 0; // 0 -Forwards, 1 -Left, 2 -Right
+
+    protected int ShopCounter = 1;
+
+    protected int ShopCounterMax = 3;
 
     private void Start()
     {
-        GameObject startingPeice = Instantiate(StartingPeice);
+        GameObject startingPeice = Instantiate(StartingPeice[0]);
 
         CurrentPeices.Add(startingPeice);
 
         HeaderNodes.Add(startingPeice.GetComponent<RoomTile>().ExitNodes[0]);
 
-        GameObject NewPrefab = Instantiate(Prefabs[Random.Range(0, Prefabs.Count)]);
-        AttachPeiceNoDetection(NewPrefab, HeaderNodes[0]);
+        AttachPeiceNoDetection(GetPeiceToAttach(DirectionPointer), HeaderNodes[0]);
 
         HeaderNodes.RemoveAt(0);
     }
@@ -35,9 +48,20 @@ public class MapGen : MonoBehaviour
         for(int i = 0; i < HeaderNodes.Count; i++)
         {
 
-            if (Vector3.Distance(HeaderNodes[i].AnchorPoint.position, PlayerLocation) < 2f)
+            if (Vector3.Distance(HeaderNodes[i].AnchorPoint.position, PlayerLocation) < 3.5f)
             {
                 ConnectionNode CurrentHead = HeaderNodes[i];
+                Vector2 forward = CurrentHead.AnchorPoint.up;  // or transform.up
+                ShopCounter--;
+
+                float angle = Mathf.Atan2(forward.y, forward.x) * Mathf.Rad2Deg;
+                if (angle >= -45f && angle <= 45f)
+                    DirectionPointer = 2; //Right
+                else if (angle > 45f && angle < 135f)
+                    DirectionPointer = 0; //Forwards
+                else if (angle <= -135f || angle >= 135f)
+                    DirectionPointer = 1; //Left
+
 
                 GameObject gameObject = CurrentPeices[0];
                 List<ConnectionNode> Tail_ExitNodes = gameObject.GetComponent<RoomTile>().ExitNodes;
@@ -53,11 +77,72 @@ public class MapGen : MonoBehaviour
 
                 CurrentPeices.RemoveAt(0);
                 Destroy(gameObject);
-                GameObject NewPrefab = Instantiate(Prefabs[Random.Range(0, Prefabs.Count)]);
-                AttachPeiceNoDetection(NewPrefab, CurrentHead);
-                
+
+                if (ShopCounter <= 0)
+                {
+                    ShopCounter = ShopCounterMax;
+                    GameObject SpawnedShopPeice = Instantiate(ShopPeice[0]);
+                    AttachPeiceNoDetection(SpawnedShopPeice, CurrentHead);
+                }
+                else
+                {
+                    AttachPeiceNoDetection(GetPeiceToAttach(DirectionPointer), CurrentHead);
+                }
+                CurrentHead.DisableWall();
             }
         }
+    }
+
+    GameObject GetPeiceToAttach(int DirectionPointer)
+    {
+        switch (DirectionPointer)
+        {
+            case 0:
+                int RNG = Random.Range(0, 12);
+                if (RNG >= 8)
+                {
+                    GameObject NewPrefab = Instantiate(ForwardsPrefabs[Random.Range(0, ForwardsPrefabs.Count)]);
+                    return NewPrefab;
+                }
+                else if (RNG >= 4)
+                {
+                    GameObject NewPrefab1 = Instantiate(LeftPrefabs[Random.Range(0, LeftPrefabs.Count)]);
+                    return NewPrefab1;
+                }
+                else
+                {
+                    GameObject NewPrefab2 = Instantiate(RightPrefabs[Random.Range(0, RightPrefabs.Count)]);
+                    return NewPrefab2;
+                }
+            case 1:
+                int RNG2 = Random.Range(0, 8);
+                if (RNG2 >= 4)
+                {
+                    GameObject NewPrefab3 = Instantiate(ForwardsPrefabs[Random.Range(0, ForwardsPrefabs.Count)]);
+                    return NewPrefab3;
+                }
+                else
+                {
+                    GameObject NewPrefab4 = Instantiate(RightPrefabs[Random.Range(0, RightPrefabs.Count)]);
+                    return NewPrefab4;
+                }
+            case 2:
+                int RNG3 = Random.Range(0, 8);
+                if (RNG3 >= 4)
+                {
+                    GameObject NewPrefab5 = Instantiate(ForwardsPrefabs[Random.Range(0, ForwardsPrefabs.Count)]);
+                    return NewPrefab5;
+                }
+                else
+                {
+                    GameObject NewPrefab6 = Instantiate(LeftPrefabs[Random.Range(0, LeftPrefabs.Count)]);
+                    return NewPrefab6;
+                }
+            default:
+                GameObject NewPrefab7 = Instantiate(Prefabs[Random.Range(0, Prefabs.Count)]);
+                return NewPrefab7;
+        }
+        
     }
 
     void AttachPeiceNoDetection(GameObject NewPrefab, ConnectionNode ExitNode)
@@ -85,7 +170,6 @@ public class MapGen : MonoBehaviour
         HeaderNodes.Remove(ExitNode);
 
         HeaderNodes.AddRange(NewPrefab.GetComponent<RoomTile>().ExitNodes);
-
 
     }
 }
