@@ -6,13 +6,16 @@ public class BaPlayerController : MonoBehaviour
 {
     private Rigidbody2D playerRb;
     [SerializeField] private float playerSpeed;
+
+
+    //Animation varibles
     public float movementX;
     public float movementY;
 
     public Animator animator;
-
     private bool IsFacingLeft;
-   
+   //
+
     private 
 
     // Start is called before the first frame update
@@ -45,13 +48,7 @@ public class BaPlayerController : MonoBehaviour
         SetMoveAni();
     }
 
-    private void Flip()
-    {
-        IsFacingLeft = !IsFacingLeft;
-        Vector2 localScale = transform.localScale;
-        localScale.x *= -1f;
-        transform.localScale = localScale;
-    }
+   
 
     private void Attack()
     {
@@ -61,6 +58,14 @@ public class BaPlayerController : MonoBehaviour
     private void PlayerSpriteDirection(Vector2 mousePosition)
     {
 
+    }
+
+    private void Flip()
+    {
+        IsFacingLeft = !IsFacingLeft;
+        Vector2 localScale = transform.localScale;
+        localScale.x *= -1f;
+        transform.localScale = localScale;
     }
 
     public void SetMoveAni()
