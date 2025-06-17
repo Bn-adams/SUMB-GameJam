@@ -9,6 +9,12 @@ public class PlayerController : MonoBehaviour
     float movementX;
     float movementY;
 
+    [SerializeField] GameObject attackHitBox;
+    [SerializeField] private float AttackDuration;
+    [SerializeField] private float AttackCooldownDuration;
+
+    public bool attackIsCoolingDown = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +32,11 @@ public class PlayerController : MonoBehaviour
     {
         movementX = Input.GetAxisRaw("Horizontal");
         movementY = Input.GetAxisRaw("Vertical");
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Attack();
+        }
     }
 
     private void Movement()
@@ -35,11 +46,32 @@ public class PlayerController : MonoBehaviour
 
     private void Attack()
     {
-
+        if (!attackIsCoolingDown)
+        {
+            attackHitBox.SetActive(true);
+            Debug.Log("Start of attack!");
+            StartCoroutine(Attacking());
+        }
     }
 
     private void PlayerSpriteDirection(Vector2 mousePosition)
     {
 
+    }
+
+    private IEnumerator Attacking()
+    {
+        yield return new WaitForSeconds(AttackDuration);
+        attackHitBox.SetActive(false);
+        Debug.Log("End of attack!");
+        StartCoroutine(AttackCooldown());
+    }
+
+    private IEnumerator AttackCooldown()
+    {
+        attackIsCoolingDown = true;
+        yield return new WaitForSeconds(AttackCooldownDuration);
+        attackIsCoolingDown = false;
+        
     }
 }
