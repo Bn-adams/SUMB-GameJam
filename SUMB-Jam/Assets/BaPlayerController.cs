@@ -6,15 +6,22 @@ public class BaPlayerController : MonoBehaviour
 {
     private Rigidbody2D playerRb;
     [SerializeField] private float playerSpeed;
-    float movementX;
-    float movementY;
+    public float movementX;
+    public float movementY;
 
-    public Animator Animator;
+    public Animator animator;
+
+    private float lastPositionX;
+    private string movementDirection;
+
 
     // Start is called before the first frame update
     void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
+
+        lastPositionX = transform.position.x;
+
     }
 
     // Update is called once per frame
@@ -24,6 +31,9 @@ public class BaPlayerController : MonoBehaviour
         Movement();
         SetAni();
         //flip();
+
+
+        //checkDirection();
     }
 
     private void HandleInput()
@@ -49,27 +59,57 @@ public class BaPlayerController : MonoBehaviour
 
     public void SetAni()
     {
-        if (Input.GetKey(KeyCode.A))
+        //if (Input.GetKeyDown(KeyCode.A))
+        //{
+        //    animator.SetBool("IsRunningL", true);
+        //}
+        //else
+        //{
+        //    animator.SetBool("IsRunningL", false);
+        //}
+
+        //if (Input.GetKeyDown(KeyCode.D))
+        //{
+        //    animator.SetBool("IsRunningR", true);
+        //}
+        //else
+        //{
+        //    animator.SetBool("IsRunningR", false);
+        //}
+
+        if (movementX > 0)
         {
-            Animator.SetBool("IsRunningL", true);
-        }
-        else
-        {
-            Animator.SetBool("IsRunningL", false);
+            animator.SetBool("IsRunningL", false);
+            animator.SetBool("IsRunningR", true);
         }
 
-        if (Input.GetKey(KeyCode.D))
+        if (movementX == 0)
         {
-            Animator.SetBool("IsRunningR", true);
-        }
-        else
-        {
-            Animator.SetBool("IsRunningR", false);
+            animator.SetBool("IsRunningL", false);
+            animator.SetBool("IsRunningR", false);
         }
 
+        if (movementX < 0)
+        {
+            animator.SetBool("IsRunningR", false);
+            animator.SetBool("IsRunningL", true);
+        }
 
+        if (movementY > 0)
+        {
+            animator.SetBool("IsRunningL", false);
+            animator.SetBool("IsRunningR", true);
+        }
 
+        if (movementY < 0)
+        {
+            animator.SetBool("IsRunningR", false);
+            animator.SetBool("IsRunningL", true);
+        }
     }
+
+
+}
     //public void flip()
     //{
     //    float moveInput = Input.GetAxisRaw("Horizontal");
@@ -79,4 +119,44 @@ public class BaPlayerController : MonoBehaviour
     //    else if (moveInput < 0)
     //        transform.localScale = new Vector3(-1, 1, 1); // face left
     //}
-}
+
+    //public void checkDirection()
+    //{
+        
+
+    //    float currentPositionX = transform.position.x;
+
+    //    if (currentPositionX > lastPositionX)
+    //    {
+    //        movementDirection = "Right";
+    //    }
+    //    else if (currentPositionX < lastPositionX)
+    //    {
+    //        movementDirection = "Left";
+    //    }
+    //    else
+    //    {
+    //        movementDirection = "Idle";
+    //    }
+
+    //    if(movementDirection == "Right")
+    //    {
+    //        animator.SetBool("IsRunningL", false);
+    //        animator.SetBool("IsRunningR", true);
+    //    }
+
+    //    if (movementDirection == "Left")
+    //    {
+    //        animator.SetBool("IsRunningR", false);
+    //        animator.SetBool("IsRunningL", true);
+    //    }
+
+    //    if (movementDirection == "Idle")
+    //    {
+    //        animator.SetBool("IsRunningR", false);
+    //        animator.SetBool("IsRunningL", false);
+    //    }
+
+    //    lastPositionX = transform.position.x;
+    //}
+
