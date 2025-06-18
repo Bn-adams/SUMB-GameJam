@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 7758352893599596160}
   - component: {fileID: 1276610095450293639}
   - component: {fileID: 414879125866125531}
-  m_Layer: 0
+  - component: {fileID: 6731438166990192805}
+  m_Layer: 7
   m_Name: WB-TempEnemyVariant
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   H: 5
   AS: 2000
-  MS: 1.5
+  MS: 0.75
   AR: 4
   VR: 5
   isOnCoolDown: 0
@@ -56,6 +57,7 @@ MonoBehaviour:
   agent: {fileID: 0}
   bb: {fileID: 0}
   projectile: {fileID: 1583901603178480772, guid: 2004ff8eeaab7a5469af959dd66e5fea, type: 3}
+  WeaponSlash: {fileID: 1583901603178480772, guid: 7ae7c8ccd462a2d47941e38d6b6e3ba1, type: 3}
   health: 0
   attackSpeed: 2000
   attackRange: 0
@@ -83,6 +85,41 @@ NavMeshAgent:
   m_BaseOffset: 0.25
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!58 &6731438166990192805
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252027963470139049}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 384
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.25
 --- !u!1 &1069713194802613307
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +194,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4391640202106134018}
   - component: {fileID: 6446152757475244373}
   - component: {fileID: 7369510238948475921}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SquareCollider (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1665709423543734580}
   - component: {fileID: 4637647414598488942}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BackTrackCollider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 7297785176513463183}
   - component: {fileID: 931173826946277744}
   - component: {fileID: 7095704382434161197}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SquareCollider (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4059666529500723580}
   - component: {fileID: 4048227526343178892}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BackTrackCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -353,7 +353,7 @@ GameObject:
   - component: {fileID: 5086242134268189251}
   - component: {fileID: 7361270491023923708}
   - component: {fileID: 3833379647888633092}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ExitNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -483,7 +483,7 @@ GameObject:
   - component: {fileID: 7791203921900949067}
   - component: {fileID: 2313778786540170950}
   - component: {fileID: 8358658841471260006}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SquareCollider (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -577,7 +577,7 @@ GameObject:
   - component: {fileID: 6194791765745617616}
   - component: {fileID: 5371969705988843243}
   - component: {fileID: 4861942092528524197}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ExitNode (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -707,7 +707,7 @@ GameObject:
   - component: {fileID: 2845239998851341236}
   - component: {fileID: 9179096229894281537}
   - component: {fileID: 2080130380205009053}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SquareCollider (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -801,7 +801,7 @@ GameObject:
   - component: {fileID: 2053331783199721182}
   - component: {fileID: 6464421375111765488}
   - component: {fileID: 4058468045425044973}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SquareCollider (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -894,7 +894,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6000761955518057113}
   - component: {fileID: 5572030622327161306}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: EntranceNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -979,7 +979,7 @@ GameObject:
   - component: {fileID: 1488468671765417499}
   - component: {fileID: 2828226253485344315}
   - component: {fileID: 7785354394309260110}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SquareCollider (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1075,7 +1075,7 @@ GameObject:
   - component: {fileID: 8662883070462015291}
   - component: {fileID: 1603996152875495927}
   - component: {fileID: -8555352822740681033}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: YBranchLRup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1284,6 +1284,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6790448373397768148, guid: 45d969c5713fbcc43a1b925d8208060a, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7803942167305141606, guid: 45d969c5713fbcc43a1b925d8208060a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.27
@@ -1376,6 +1380,10 @@ PrefabInstance:
     - target: {fileID: 6790448373397768148, guid: 45d969c5713fbcc43a1b925d8208060a, type: 3}
       propertyPath: m_Name
       value: Spawner (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6790448373397768148, guid: 45d969c5713fbcc43a1b925d8208060a, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7803942167305141606, guid: 45d969c5713fbcc43a1b925d8208060a, type: 3}
       propertyPath: m_LocalPosition.x

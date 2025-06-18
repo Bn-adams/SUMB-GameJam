@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3254178403841288499}
   - component: {fileID: 5627835074581936138}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4827922163605570969}
   - component: {fileID: 6279843245424305301}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 8407874306499207225}
   - component: {fileID: 514513413493053932}
   - component: {fileID: 6298757622506700825}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SquareCollider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -272,7 +272,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5086242134268189251}
   - component: {fileID: 7361270491023923708}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ExitNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -357,7 +357,7 @@ GameObject:
   - component: {fileID: 2524733291613922164}
   - component: {fileID: 2532687268696907787}
   - component: {fileID: 8540024123548609852}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ShopButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -451,7 +451,7 @@ GameObject:
   - component: {fileID: 4525588261960763931}
   - component: {fileID: 1078985690810732541}
   - component: {fileID: 8135898666233458438}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SquareCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -544,7 +544,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5479984586549934685}
   - component: {fileID: 503792216397306058}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -628,7 +628,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5562598503806808173}
   - component: {fileID: 8037040179904233056}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Square (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -712,7 +712,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7183825141943941455}
   - component: {fileID: 2674752155792241962}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BackTrackCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -789,7 +789,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6000761955518057113}
   - component: {fileID: 5572030622327161306}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: EntranceNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -876,7 +876,7 @@ GameObject:
   - component: {fileID: 8662883070462015291}
   - component: {fileID: 4347855575129604283}
   - component: {fileID: -489582290133231204}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Shop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -978,6 +978,7 @@ MonoBehaviour:
     NotAvailable: 0
     RoadBlockCollider: {fileID: 0}
     BackTrackCollider: {fileID: 0}
+  spawners: []
 --- !u!114 &4347855575129604283
 MonoBehaviour:
   m_ObjectHideFlags: 0

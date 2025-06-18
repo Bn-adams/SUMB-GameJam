@@ -70,7 +70,7 @@ public class MapGen : MonoBehaviour
 
     private void Update()
     {
-        Vector3 PlayerLocation = GameObject.Find("Drone").transform.position;
+        Vector3 PlayerLocation = GameObject.Find("Player").transform.position;
         for(int i = 0; i < HeaderNodes.Count; i++)
         {
 

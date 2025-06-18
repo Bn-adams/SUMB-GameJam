@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8407874306499207225}
   - component: {fileID: 514513413493053932}
   - component: {fileID: 7425700241960158689}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SquareCollider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5086242134268189251}
   - component: {fileID: 7361270491023923708}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ExitNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 4525588261960763931}
   - component: {fileID: 1078985690810732541}
   - component: {fileID: 8689402224803485414}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SquareCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7183825141943941455}
   - component: {fileID: 2674752155792241962}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BackTrackCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -359,7 +359,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6000761955518057113}
   - component: {fileID: 5572030622327161306}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: EntranceNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -446,7 +446,7 @@ GameObject:
   - component: {fileID: 8662883070462015291}
   - component: {fileID: -8253939100937250261}
   - component: {fileID: -7487392249060997331}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Straight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -645,6 +645,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6790448373397768148, guid: 45d969c5713fbcc43a1b925d8208060a, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7803942167305141606, guid: 45d969c5713fbcc43a1b925d8208060a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.02
@@ -737,6 +741,10 @@ PrefabInstance:
     - target: {fileID: 6790448373397768148, guid: 45d969c5713fbcc43a1b925d8208060a, type: 3}
       propertyPath: m_Name
       value: Spawner (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6790448373397768148, guid: 45d969c5713fbcc43a1b925d8208060a, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7803942167305141606, guid: 45d969c5713fbcc43a1b925d8208060a, type: 3}
       propertyPath: m_LocalPosition.x

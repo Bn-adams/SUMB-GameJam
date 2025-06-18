@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 240352650752848870}
   - component: {fileID: 4514361243205545285}
   - component: {fileID: 7764405113325169192}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SquareCollider (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4202877505035149031}
   - component: {fileID: 7913223079612364516}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BackTrackCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 5086242134268189251}
   - component: {fileID: 7361270491023923708}
   - component: {fileID: 7020940936817100232}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ExitNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 6194791765745617616}
   - component: {fileID: 5371969705988843243}
   - component: {fileID: 2689428819361642003}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ExitNode (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -442,7 +442,7 @@ GameObject:
   - component: {fileID: 1976103739377775075}
   - component: {fileID: 3468073423913761986}
   - component: {fileID: 5539069126839903120}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SquareCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -535,7 +535,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6000761955518057113}
   - component: {fileID: 5572030622327161306}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: EntranceNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -620,7 +620,7 @@ GameObject:
   - component: {fileID: 6001758769770722967}
   - component: {fileID: 5799609247210000903}
   - component: {fileID: 2110455078215260468}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SquareCollider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -716,7 +716,7 @@ GameObject:
   - component: {fileID: 8662883070462015291}
   - component: {fileID: -521206650355600112}
   - component: {fileID: -2902630903131507205}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TBranchRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -900,7 +900,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1694422910052779890}
   - component: {fileID: 9064582606369591576}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BackTrackCollider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -999,6 +999,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6790448373397768148, guid: 45d969c5713fbcc43a1b925d8208060a, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7803942167305141606, guid: 45d969c5713fbcc43a1b925d8208060a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.93
@@ -1091,6 +1095,10 @@ PrefabInstance:
     - target: {fileID: 6790448373397768148, guid: 45d969c5713fbcc43a1b925d8208060a, type: 3}
       propertyPath: m_Name
       value: Spawner (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6790448373397768148, guid: 45d969c5713fbcc43a1b925d8208060a, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7803942167305141606, guid: 45d969c5713fbcc43a1b925d8208060a, type: 3}
       propertyPath: m_LocalPosition.x

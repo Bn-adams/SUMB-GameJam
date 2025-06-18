@@ -15,6 +15,27 @@ public class PlayerController : MonoBehaviour
 
     public bool attackIsCoolingDown = false;
 
+    // Player Stats
+    // Sabre
+    public int SabreDamage;
+    public int SabreAttackSpeed;
+    public float SabreSizeScaling;
+
+    // Psitol
+    public int PistolDamage;
+    public int PistolPercing;
+    public float PistolProjectileSize;
+
+    // Surviveability
+    public int HP;
+    public int HPMax;
+    public int Defense;
+
+    // Utility
+    public float MovementSpeed;
+    public int Gold;
+
+
     // Start is called before the first frame update
     void Start()
     {

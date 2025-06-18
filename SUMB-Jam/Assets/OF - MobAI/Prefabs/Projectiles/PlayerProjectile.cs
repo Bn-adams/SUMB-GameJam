@@ -8,22 +8,40 @@ public class PlayerProjectile : MonoBehaviour
 {
     public GameObject target;
     Vector3 x;
-    public int speed;
+    public float speed;
+    public float lifetime;
+    public int Damage = 1;
 
     private void Start()
     {
         x = target.transform.position; 
         x = (x - transform.position).normalized;
-        Delayer(2000);
     }
 
     void Update()
     {
         transform.position += x * Time.deltaTime * speed;
+        if (lifetime <= 0f)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            lifetime -= Time.deltaTime;
+        }
     }
-    private async void Delayer(int timer)
+
+    void OnCollisionEnter2D(Collision2D other)
     {
-        await Task.Delay(timer);
-        GameObject.Destroy(this.gameObject);
+
+        if (other.gameObject.tag == "Enemy")
+        {
+            other.gameObject.GetComponent<BaseMobAi>().TakeDamage(Damage);
+        }
+        else
+        {
+            Debug.Log("Projectile: NOT TARGET HIT");
+        }
+        Destroy(this.gameObject);
     }
 }

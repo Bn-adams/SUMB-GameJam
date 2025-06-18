@@ -9,7 +9,6 @@ public class Pc : MonoBehaviour
     float movementX;
     float movementY;
 
-    [SerializeField] GameObject attackHitBox;
     [SerializeField] private float AttackDuration;
     [SerializeField] private float AttackCooldownDuration;
 
@@ -25,7 +24,7 @@ public class Pc : MonoBehaviour
     GameObject atk;
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] SpriteRenderer TheStrap;
-    [SerializeField] GameObject projectile;
+    [SerializeField] List<GameObject> projectile = new List<GameObject>();
     [SerializeField] GameObject gunBase;
     [SerializeField] GameObject reticle;
 
@@ -72,7 +71,7 @@ public class Pc : MonoBehaviour
 
     private void GUN()
     {
-        var x = Instantiate(projectile, gunBase.transform.position,gunBase.transform.rotation);
+        var x = Instantiate(projectile[0], gunBase.transform.position,gunBase.transform.rotation);
         x.GetComponent<PlayerProjectile>().target = reticle;
     }
 
@@ -81,9 +80,8 @@ public class Pc : MonoBehaviour
         if (!attackIsCoolingDown)
         {
             Vector3 MousePos = Input.mousePosition;
-            atk = GameObject.Instantiate(attackHitBox, this.transform.position, Quaternion.Euler(0,0,aimer.transform.eulerAngles.z));
-            PlayerAttack pA = atk.GetComponent<PlayerAttack>();
-            pA.player = this.gameObject;
+            var x = Instantiate(projectile[1], gunBase.transform.position, gunBase.transform.rotation);
+            x.GetComponent<PlayerProjectile>().target = reticle;
             //Debug.Log("Start of attack!");
             animator.SetBool("IsRunning", false);
             animator.SetBool("IsAttacking", true);

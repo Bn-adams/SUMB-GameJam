@@ -9,6 +9,7 @@ public class MobSpawnManagement : MonoBehaviour
 
     protected int HighestValue = 0;
 
+    public int BaseThreatMod = 0;
     private void Start()
     {
         for (int i = 0; i < SpawnableEntities.Count; i++)
@@ -24,7 +25,7 @@ public class MobSpawnManagement : MonoBehaviour
     {
         List<GameObject> ChosenEntities = new List<GameObject>();
 
-        int EntityThreat_total = Random.Range(RoomCount, (RoomCount * Random.Range(1,HighestValue)));
+        int EntityThreat_total = Random.Range(RoomCount + BaseThreatMod, (RoomCount * Random.Range(1,HighestValue)) + BaseThreatMod);
 
         var shuffled = SpawnableEntities.OrderBy(e => UnityEngine.Random.value).ToList();
 
