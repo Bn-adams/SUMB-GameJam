@@ -245,7 +245,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4824585004067866182, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.18
+      value: 0.51
       objectReference: {fileID: 0}
     - target: {fileID: 5521610281131411113, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
       propertyPath: m_Sprite
@@ -275,6 +275,14 @@ PrefabInstance:
       propertyPath: m_ExcludeLayers.m_Bits
       value: 448
       objectReference: {fileID: 0}
+    - target: {fileID: 7516769618913162902, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: projectile.Array.data[0]
+      value: 
+      objectReference: {fileID: 1583901603178480772, guid: 9e71ee39cbe680747974412eea3bcc48, type: 3}
+    - target: {fileID: 7516769618913162902, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: projectile.Array.data[1]
+      value: 
+      objectReference: {fileID: 4466906232586253696, guid: 21a597d3f19df62408c25ef910fb5758, type: 3}
     - target: {fileID: 8374757932104656160, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
