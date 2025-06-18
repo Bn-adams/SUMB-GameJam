@@ -5,7 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
 
-    GameObject target;
+    public GameObject target;
     Vector3 aim;
 
     public int speed;
@@ -24,7 +24,6 @@ public class Projectile : MonoBehaviour
 
     void takeAim()
     {
-        target = GameObject.FindGameObjectWithTag("Player");
 
         Rigidbody2D rb = target.GetComponent<Rigidbody2D>();
 

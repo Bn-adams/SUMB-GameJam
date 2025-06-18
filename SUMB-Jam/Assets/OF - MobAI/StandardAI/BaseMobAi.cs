@@ -178,7 +178,7 @@ public class BaseMobAi : MonoBehaviour
     public void FireProjectile()
     {
         var x = GameObject.Instantiate(projectile,this.transform);
-        
+        x.GetComponent<Projectile>().target = bb.player;
         
     }
 

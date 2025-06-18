@@ -57,6 +57,17 @@ public class Shop : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if(Vector2.Distance(GameObject.Find("BlackBoard").GetComponent<BlackBoard>().player.transform.position,this.transform.position) < 10f)
+            {
+                OpenShopMenu();
+            }
+        }
+    }
+
     void OnMouseDown()
     {
         OpenShopMenu();

@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Unity.AI;
+using UnityEngine.UI;
+using UnityEngine.AI;
 
 public class MapGen : MonoBehaviour
 {
@@ -25,12 +28,21 @@ public class MapGen : MonoBehaviour
 
     protected int DirectionPointer = 0; // 0 -Forwards, 1 -Left, 2 -Right
 
+    protected int RoomCounter = 0;
+
     protected int ShopCounter = 1;
 
     protected int ShopCounterMax = 3;
 
+    public NavMeshPlus.Components.NavMeshSurface NavSurface;
+
+    public MobSpawnManagement MobSpawnManagement;
+
     private void Start()
     {
+
+        Debug.Log(NavSurface.ToString());
+
         GameObject startingPeice = Instantiate(StartingPeice[0]);
 
         CurrentPeices.Add(startingPeice);
@@ -40,6 +52,20 @@ public class MapGen : MonoBehaviour
         AttachPeiceNoDetection(GetPeiceToAttach(DirectionPointer), HeaderNodes[0]);
 
         HeaderNodes.RemoveAt(0);
+
+        RebuildNavigation();
+    }
+
+    private void RebuildNavigation()
+    {
+        StartCoroutine(WaitAndExecute());
+    }
+
+    IEnumerator WaitAndExecute()
+    {
+        yield return new WaitForSeconds(0.1f);
+        NavSurface.BuildNavMesh();
+        CurrentPeices[1].GetComponent<RoomTile>().SpawnEnemies(MobSpawnManagement.GenerateEncounter(RoomCounter));
     }
 
     private void Update()
@@ -89,6 +115,8 @@ public class MapGen : MonoBehaviour
                     AttachPeiceNoDetection(GetPeiceToAttach(DirectionPointer), CurrentHead);
                 }
                 CurrentHead.DisableWall();
+
+                RebuildNavigation();
             }
         }
     }
@@ -171,5 +199,6 @@ public class MapGen : MonoBehaviour
 
         HeaderNodes.AddRange(NewPrefab.GetComponent<RoomTile>().ExitNodes);
 
+        RoomCounter++;
     }
 }
