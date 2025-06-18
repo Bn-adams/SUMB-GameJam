@@ -13,16 +13,11 @@ public class Aim : MonoBehaviour
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0f; 
-
         Vector3 direction = mousePos - player.transform.position;
-
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-        transform.position = player.transform.position; 
-        transform.rotation = Quaternion.Euler(0, 0, angle - 90);
-
-        direction = theStrap.transform.position - reticle.transform.position;
-        angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        theStrap.transform.rotation = Quaternion.Euler(0, 0, angle);
+        transform.position = player.transform.position;
+        Vector2 direction2D = (player.transform.position - mousePos).normalized;
+        float angle2D = Mathf.Atan2(direction.y, direction.x ) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, angle2D - 90);
+        theStrap.transform.rotation = Quaternion.Euler(0, 0, angle2D + 180 );
     }
 }

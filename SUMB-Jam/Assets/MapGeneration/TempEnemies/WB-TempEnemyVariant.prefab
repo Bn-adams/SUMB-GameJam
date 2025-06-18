@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 1276610095450293639}
   - component: {fileID: 414879125866125531}
   - component: {fileID: 6731438166990192805}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WB-TempEnemyVariant
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

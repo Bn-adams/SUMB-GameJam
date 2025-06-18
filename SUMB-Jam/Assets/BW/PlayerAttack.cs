@@ -4,17 +4,27 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public int Damage = 0;
+    public BaseMobAi baseMobAi;
+    public GameObject player;
+    void Start()
+    {
+
+    }
+
+    void Update()
+    {
+        transform.position = player.transform.position;
+    }
 
     private void OnCollisionStay2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            BaseMobAi baseMobAi = other.gameObject.GetComponent<BaseMobAi>();
+            baseMobAi = other.gameObject.GetComponent<BaseMobAi>();
             if (baseMobAi != null)
             {
                 // call take damage function from mob ai script
-                baseMobAi.TakeDamage(Damage);
+                baseMobAi.TakeDamage(5);
             }
         }
     }

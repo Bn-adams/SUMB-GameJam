@@ -25,7 +25,7 @@ public class BaseMobAi : MonoBehaviour
     public GameObject WeaponSlash;
 
 
-    [HideInInspector] public int health;
+    [HideInInspector] public int health = 5;
     [HideInInspector] public int attackSpeed;
     [HideInInspector] public float attackRange;
     [HideInInspector] public float moveSpeed;
@@ -57,10 +57,7 @@ public class BaseMobAi : MonoBehaviour
         isOnCoolDown = false;
         reloading = false;
 
-        if (isRanged == false)
-        {
-            cdr.radius = AR;
-        }
+
 
 
 
@@ -118,9 +115,10 @@ public class BaseMobAi : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        Debug.Log("Enemy takes "+damage+" damage");
         if (health <= 0)
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
     public int getHealth()
