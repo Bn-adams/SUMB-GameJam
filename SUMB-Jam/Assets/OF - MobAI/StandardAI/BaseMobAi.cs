@@ -23,7 +23,7 @@ public class BaseMobAi : MonoBehaviour
     public BlackBoard bb;
     public GameObject projectile;
     public GameObject WeaponSlash;
-
+    public GameObject PickupPrefab;
 
     [HideInInspector] public int health = 5;
     [HideInInspector] public int attackSpeed;
@@ -118,6 +118,10 @@ public class BaseMobAi : MonoBehaviour
         Debug.Log("Enemy takes "+damage+" damage");
         if (health <= 0)
         {
+            if (UnityEngine.Random.Range(0, 100) > 50)
+            {
+                Instantiate(PickupPrefab, transform.position, Quaternion.identity);
+            }
             Destroy(this.gameObject);
         }
     }

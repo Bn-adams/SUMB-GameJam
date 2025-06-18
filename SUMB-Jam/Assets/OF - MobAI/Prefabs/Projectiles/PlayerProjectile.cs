@@ -12,6 +12,8 @@ public class PlayerProjectile : MonoBehaviour
     public float lifetime;
     public int Damage = 1;
 
+    public bool ThisIsSword;
+
     private void Start()
     {
         x = target.transform.position; 
@@ -42,6 +44,7 @@ public class PlayerProjectile : MonoBehaviour
         {
             Debug.Log("Projectile: NOT TARGET HIT");
         }
-        Destroy(this.gameObject);
+        if (!ThisIsSword)
+            Destroy(this.gameObject);
     }
 }

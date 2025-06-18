@@ -10,55 +10,41 @@ public class HeartBar : MonoBehaviour
     public Sprite FullHeartContainerSprite;
 
     protected List<GameObject> DisplayedHearts = new List<GameObject>();
-    protected List<GameObject> DisplayedEmptyHearts = new List<GameObject>();
-    protected List<GameObject> DisplayedFullHearts = new List<GameObject>();
 
     protected float Offset;
 
-    public void Start()
-    {
-        SetHealth(3, 3);
-    }
+    int FullPtr = 0;
 
     public void SetHealth(int Hearts, int Max_Hearts)
     {
-        while(DisplayedHearts.Count > Max_Hearts)
+        while(DisplayedHearts.Count > Max_Hearts && Max_Hearts >= 0)
         {
             GameObject HeartContainer = DisplayedHearts[DisplayedHearts.Count - 1];
-            DisplayedEmptyHearts.Remove(HeartContainer);
-            DisplayedFullHearts.Remove(HeartContainer);
             DisplayedHearts.Remove(HeartContainer);
             Destroy(HeartContainer);
             Offset -= 130;
         }
-        while(DisplayedHearts.Count < Max_Hearts)
+        while(DisplayedHearts.Count < Max_Hearts && Max_Hearts >= 0)
         {
             GameObject NewHeartContainer = Instantiate(HeartContainer, this.transform);
             Vector3 NHC_pos = new Vector3(NewHeartContainer.transform.position.x + Offset, NewHeartContainer.transform.position.y, NewHeartContainer.transform.position.z);
             NewHeartContainer.transform.position = NHC_pos;
-            DisplayedEmptyHearts.Add(NewHeartContainer);
             DisplayedHearts.Add(NewHeartContainer);
             Offset += 130;
         }
-        while(DisplayedFullHearts.Count < Hearts)
+        while(FullPtr < Hearts && Hearts >= 0 && Max_Hearts >= 0)
         {
-            GameObject LastEmptyHeartInRow = DisplayedEmptyHearts[DisplayedEmptyHearts.Count - 1];
-
+            GameObject LastEmptyHeartInRow = DisplayedHearts[FullPtr];
+            FullPtr++;
             LastEmptyHeartInRow.GetComponent<Image>().sprite = FullHeartContainerSprite;
-
-            DisplayedEmptyHearts.Remove(LastEmptyHeartInRow);
-            DisplayedFullHearts.Add(LastEmptyHeartInRow);
-
-            
         }
-        while (DisplayedFullHearts.Count > Hearts)
+        while (FullPtr > Hearts && Hearts >= 0 && Max_Hearts >= 0)
         {
-            GameObject LastFullHeartInRow = DisplayedFullHearts[DisplayedEmptyHearts.Count - 1];
+            FullPtr--;
+            GameObject LastFullHeartInRow = DisplayedHearts[FullPtr];
 
             LastFullHeartInRow.GetComponent<Image>().sprite = EmptyHeartContainerSprite;
-
-            DisplayedFullHearts.Remove(LastFullHeartInRow);
-            DisplayedEmptyHearts.Add(LastFullHeartInRow);
+            
         }
     }
 

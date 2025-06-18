@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Pc : MonoBehaviour
 {
@@ -9,15 +10,13 @@ public class Pc : MonoBehaviour
     float movementX;
     float movementY;
 
-    [SerializeField] private float AttackDuration;
-    [SerializeField] private float AttackCooldownDuration;
+    [SerializeField] private float SabreAttackCooldownDuration;
+
+
 
     //Animation varibles
-
     public Animator animator;
     private bool IsFacingLeft;
-    //
-
     public bool attackIsCoolingDown = false;
 
     public GameObject aimer;
@@ -30,6 +29,29 @@ public class Pc : MonoBehaviour
 
 
 
+    // ScalingStats
+    // Utiltity
+    public int Gold = 0;
+    public int GoldMulti = 1;
+    public int MovementSpeed = 1;
+    // Sabre
+    public int SabreProjDamage = 1;
+    public int SabreAS = 1;
+    public float SabreProjSize = 1f;
+    // Pistol
+    public int PistolProjDamage = 1;
+    public int PistolReloadDuration = 1;
+    public float PistolProjSize = 1f;
+    public bool Reload = false;
+    public int Ammo = 3;
+    public int MaxAmmo = 3;
+    public float ReloadDuration = 3f;
+    // Defense
+    public int Health = 3;
+    public int MaxHealth = 3;
+
+    protected bool Invincible;
+
 
 
     // Start is called before the first frame update
@@ -37,6 +59,8 @@ public class Pc : MonoBehaviour
     {
         playerRb = GetComponent<Rigidbody2D>();
         IsFacingLeft = true;
+        UpdateStats();
+        
     }
 
     // Update is called once per frame
@@ -71,44 +95,82 @@ public class Pc : MonoBehaviour
 
     private void GUN()
     {
-        var x = Instantiate(projectile[0], gunBase.transform.position,gunBase.transform.rotation);
-        x.GetComponent<PlayerProjectile>().target = reticle;
+        if (Reload != true)
+        {
+            Ammo--;
+            UpdateHUD();
+            var x = Instantiate(projectile[0], gunBase.transform.position, gunBase.transform.rotation);
+            x.GetComponent<PlayerProjectile>().target = reticle;
+            x.GetComponent<PlayerProjectile>().Damage = PistolProjDamage;
+            x.transform.localScale = x.transform.localScale * PistolProjSize;
+        }
+        if (Ammo <= 0 && Reload == false)
+        {
+            Reload = true;
+            StartCoroutine(GUNReload());
+        }
     }
 
     private void Attack()
     {
         if (!attackIsCoolingDown)
         {
+            attackIsCoolingDown = true;
             Vector3 MousePos = Input.mousePosition;
-            var x = Instantiate(projectile[1], gunBase.transform.position, gunBase.transform.rotation);
+            var x = Instantiate(projectile[1], transform.position, gunBase.transform.rotation);
             x.GetComponent<PlayerProjectile>().target = reticle;
+            x.GetComponent<PlayerProjectile>().Damage = SabreProjDamage;
+            x.transform.localScale = x.transform.localScale * SabreProjSize;
             //Debug.Log("Start of attack!");
             animator.SetBool("IsRunning", false);
             animator.SetBool("IsAttacking", true);
-            StartCoroutine(Attacking());
+            StartCoroutine(AttackAnim());
+            StartCoroutine(AttackCooldown());
         }
     }
 
-    private void PlayerSpriteDirection(Vector2 mousePosition)
+    public IEnumerator AttackAnim()
     {
-
-    }
-
-    private IEnumerator Attacking()
-    {
-        yield return new WaitForSeconds(AttackDuration);
-        GameObject.Destroy(atk);
-        //Debug.Log("End of attack!");
+        yield return new WaitForSeconds(0.1f);
+        animator.SetBool("IsRunning", true);
         animator.SetBool("IsAttacking", false);
-        StartCoroutine(AttackCooldown());
     }
+
+    public void UpdateStats()
+    {
+        SabreAttackCooldownDuration = 1f / SabreAS;
+        ReloadDuration = 3f / PistolReloadDuration;
+        UpdateHUD();
+    }
+
+    public void AddGold(int Amount)
+    {
+        Gold += Amount * GoldMulti;
+        UpdateHUD();
+    }
+
+    public void UpdateHUD()
+    {
+        GameObject.Find("HeartBar").GetComponent<HeartBar>().SetHealth(Health,MaxHealth);
+        GameObject.Find("GoldCounterText").GetComponent<Text>().text = Gold.ToString();
+        GameObject.Find("CurrentAmmoText").GetComponent<Text>().text = Ammo.ToString();
+        GameObject.Find("MaxAmmoText").GetComponent<Text>().text = MaxAmmo.ToString();
+    }
+
 
     private IEnumerator AttackCooldown()
     {
-        attackIsCoolingDown = true;
-        yield return new WaitForSeconds(AttackCooldownDuration);
+        yield return new WaitForSeconds(SabreAttackCooldownDuration);
         attackIsCoolingDown = false;
 
+    }
+
+    private IEnumerator GUNReload()
+    {
+        yield return new WaitForSeconds(ReloadDuration);
+        Ammo = MaxAmmo;
+        UpdateHUD();
+        Reload = false;
     }
 
     public void SetMoveAni()
@@ -126,4 +188,33 @@ public class Pc : MonoBehaviour
         spriteRenderer.flipX = mousePos.x > transform.position.x;
         TheStrap.flipY = mousePos.x > transform.position.x;
     }
+
+    public void TakeDamage(int Amount)
+    {
+        if (!Invincible)
+        {
+            Health -= Amount;
+            UpdateHUD();
+            spriteRenderer.color = Color.red;
+            if(Health <= 0)
+            {
+                ThePlayerDiedLOL();
+            }
+            Invincible = true;
+            StartCoroutine(TempInvincible());
+        }
+    }
+
+    private static void ThePlayerDiedLOL()
+    {
+        Debug.Log("RIP BOZO");
+    }
+
+    protected IEnumerator TempInvincible()
+    {
+        yield return new WaitForSeconds(1f);
+        spriteRenderer.color = Color.white;
+        Invincible = false;
+    }
+
 }

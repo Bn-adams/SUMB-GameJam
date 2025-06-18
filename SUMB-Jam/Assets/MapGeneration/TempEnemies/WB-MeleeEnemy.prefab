@@ -58,6 +58,7 @@ MonoBehaviour:
   bb: {fileID: 0}
   projectile: {fileID: 1583901603178480772, guid: 2004ff8eeaab7a5469af959dd66e5fea, type: 3}
   WeaponSlash: {fileID: 1583901603178480772, guid: 7ae7c8ccd462a2d47941e38d6b6e3ba1, type: 3}
+  PickupPrefab: {fileID: 7258871652497065363, guid: f217ed62174292745b33781438f60580, type: 3}
   health: 0
   attackSpeed: 2000
   attackRange: 0
