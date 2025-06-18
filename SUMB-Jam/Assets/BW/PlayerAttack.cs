@@ -5,16 +5,15 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     public BaseMobAi baseMobAi;
-    // Start is called before the first frame update
+    public GameObject player;
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        transform.position = player.transform.position;
     }
 
     private void OnCollisionStay2D(Collision2D other)
