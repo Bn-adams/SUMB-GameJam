@@ -6,7 +6,7 @@ public class ShopMenu : MonoBehaviour
 {
     public List<ShelfDisplay> shelfDisplays = new List<ShelfDisplay>();
     public GameObject UI;
-    public void StockShelves(List<Shelf> shelves)
+    public void StockShelves(List<Upgrade> shelves)
     {
         int ptr = 0;
         foreach(ShelfDisplay shelf in shelfDisplays)

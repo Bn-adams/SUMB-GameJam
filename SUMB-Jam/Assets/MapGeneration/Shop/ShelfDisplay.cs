@@ -12,19 +12,19 @@ public class ShelfDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public Image Icon;
 
-    protected Upgrade HeldUpgrade;
-
     public int Stock;
 
     public GameObject DescriptionBox;
 
-    public void UpdateDisplay(Shelf shelf)
+    public Upgrade HeldUpgrade;
+
+    public void UpdateDisplay(Upgrade shelf)
     {
         NameText.text = shelf.name;
         DescText.text = shelf.description;
         PriceText.text = shelf.price.ToString();
-        HeldUpgrade = shelf.upgrade;
         Stock = shelf.stock;
+        HeldUpgrade = shelf;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -39,7 +39,11 @@ public class ShelfDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        HeldUpgrade.DoUpgrade();
+        if(HeldUpgrade.price <= GameObject.Find("Player").GetComponent<Pc>().Gold){
+            HeldUpgrade.DoUpgrade();
+            UpdateDisplay(HeldUpgrade);
+        }
+        
     }
 
 }

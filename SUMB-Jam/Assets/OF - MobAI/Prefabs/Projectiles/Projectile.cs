@@ -13,6 +13,8 @@ public class Projectile : MonoBehaviour
 
     public float lifetime = 1f;
 
+    public bool ThisIsSword;
+
     private void Start()
     {
         //speed = 10;
@@ -44,14 +46,11 @@ public class Projectile : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other)
     {
 
-        if(other.gameObject.tag == target.tag)
+        if(other.gameObject.tag == "Player")
         {
-            Debug.Log("Projectile: TARGET HIT");
+            target.GetComponent<Pc>().TakeDamage(1);
         }
-        else
-        {
-            Debug.Log("Projectile: NOT TARGET HIT");
-        }
+        if(!ThisIsSword)
             Destroy(this.gameObject);
     }
 }
