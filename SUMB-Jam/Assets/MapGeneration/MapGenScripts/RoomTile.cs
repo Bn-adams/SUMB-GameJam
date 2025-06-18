@@ -8,6 +8,25 @@ public class RoomTile : MonoBehaviour
 
     public List<ConnectionNode> EntranceNodes;
 
+    public List<Spawner> spawners = new List<Spawner>();
+
+    public void SpawnEnemies(List<GameObject> Entities)
+    {
+        
+        if (spawners.Count > 0)
+        {
+            Debug.Log("Spawning Entities");
+            foreach (var e in Entities)
+            {
+                spawners[Random.Range(0, spawners.Count)].SpawnEntity(e);
+            }
+        }
+        else
+        {
+            Debug.Log("No Spawners Found");
+        }
+        
+    }
 
 
 }
