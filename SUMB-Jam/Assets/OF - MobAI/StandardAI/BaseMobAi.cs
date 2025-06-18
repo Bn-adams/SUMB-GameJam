@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Rendering;
+using static UnityEngine.GraphicsBuffer;
 
 public class BaseMobAi : MonoBehaviour
 {
@@ -20,6 +22,7 @@ public class BaseMobAi : MonoBehaviour
     public NavMeshAgent agent;
     public BlackBoard bb;
     public GameObject projectile;
+    public GameObject WeaponSlash;
 
 
     [HideInInspector] public int health;
@@ -115,6 +118,10 @@ public class BaseMobAi : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        if (health <= 0)
+        {
+            Destroy(this);
+        }
     }
     public int getHealth()
     {
@@ -172,14 +179,24 @@ public class BaseMobAi : MonoBehaviour
     void Update()
     {
         Delayer(500);
-        agent.SetDestination(bb.player.transform.position); 
+        agent.SetDestination(bb.player.transform.position);
     }
 
     public void FireProjectile()
     {
-        var x = GameObject.Instantiate(projectile,this.transform);
+        var x = GameObject.Instantiate(projectile,this.transform.position,Quaternion.identity);
         x.GetComponent<Projectile>().target = bb.player;
-        
+        x.GetComponent<Projectile>().takeAim();
+    }
+
+    public void SlashAttack()
+    {
+        var x = GameObject.Instantiate(WeaponSlash, this.transform.position, Quaternion.identity);
+        x.GetComponent<Projectile>().target = bb.player;
+        Vector2 direction = (bb.player.transform.position - transform.position).normalized;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        x.transform.rotation = Quaternion.Euler(0, 0, angle);
+        x.GetComponent<Projectile>().takeAim();
     }
 
 }
@@ -228,7 +245,12 @@ public class CheckDetectionRange : Node
         Debug.Log("checking range");
 
         distanceBetween = Mathf.Abs(bb.player.transform.position.magnitude - me.transform.position.magnitude);
-        if(distanceBetween > threshold)
+        if (distanceBetween > 100f)
+        {
+            GameObject.Destroy(me.gameObject);
+        }
+
+        if (distanceBetween > threshold)
         {
             return result.Success;
         }
@@ -236,6 +258,7 @@ public class CheckDetectionRange : Node
         {
             return result.Failure;
         }
+        
     }
 }
 
@@ -288,7 +311,9 @@ public class AttackPlayer : Node
             if (me.isOnCoolDown == false)
             {
                 Debug.Log("attack");
+                me.SlashAttack();
                 me.isOnCoolDown = true;
+                me.reloading = true;
                 me.meleeCooldown(me.getAttackSpeed());
                 return result.Success;
             }

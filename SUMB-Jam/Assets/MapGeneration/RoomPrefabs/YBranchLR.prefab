@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8701658585425775742}
   - component: {fileID: 7645669665293640087}
   - component: {fileID: 3687754907744670886}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SquareCollider (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3800327018837873785}
   - component: {fileID: 3236622886011760099}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BackTrackCollider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 4697427693449389502}
   - component: {fileID: 3818986757502066582}
   - component: {fileID: 260717021074104535}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SquareCollider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -276,7 +276,7 @@ GameObject:
   - component: {fileID: 5086242134268189251}
   - component: {fileID: 7361270491023923708}
   - component: {fileID: 7072594870688143836}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ExitNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -406,7 +406,7 @@ GameObject:
   - component: {fileID: 6194791765745617616}
   - component: {fileID: 5371969705988843243}
   - component: {fileID: 8739269208807085977}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ExitNode (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -536,7 +536,7 @@ GameObject:
   - component: {fileID: 8314863144090224633}
   - component: {fileID: 7648935892501779596}
   - component: {fileID: 5166885635593213059}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SquareCollider (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -629,7 +629,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5774323192865944659}
   - component: {fileID: 5382291049267636979}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BackTrackCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -707,7 +707,7 @@ GameObject:
   - component: {fileID: 1308782979492358411}
   - component: {fileID: 2632473317304686990}
   - component: {fileID: 7468265559487202691}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SquareCollider (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -800,7 +800,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6000761955518057113}
   - component: {fileID: 5572030622327161306}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: EntranceNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -885,7 +885,7 @@ GameObject:
   - component: {fileID: 1261639442829698780}
   - component: {fileID: 428130093047593952}
   - component: {fileID: 4795874923276690952}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SquareCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -979,7 +979,7 @@ GameObject:
   - component: {fileID: 6020183946863593534}
   - component: {fileID: 3177451517939738676}
   - component: {fileID: 7263660187587162819}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SquareCollider (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1075,7 +1075,7 @@ GameObject:
   - component: {fileID: 8662883070462015291}
   - component: {fileID: -7132970074200548557}
   - component: {fileID: -8930136805201372932}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: YBranchLR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1284,6 +1284,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6790448373397768148, guid: 45d969c5713fbcc43a1b925d8208060a, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7803942167305141606, guid: 45d969c5713fbcc43a1b925d8208060a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.91
@@ -1376,6 +1380,10 @@ PrefabInstance:
     - target: {fileID: 6790448373397768148, guid: 45d969c5713fbcc43a1b925d8208060a, type: 3}
       propertyPath: m_Name
       value: Spawner (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6790448373397768148, guid: 45d969c5713fbcc43a1b925d8208060a, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7803942167305141606, guid: 45d969c5713fbcc43a1b925d8208060a, type: 3}
       propertyPath: m_LocalPosition.x
