@@ -6,14 +6,14 @@ public class ShopManager : MonoBehaviour
 {
     protected List<Upgrade> shelves = new List<Upgrade>()
     {
-        new SabreDmgUpgrade() { name = "Sabre Damage", description = "Increases the damage of your Sabre Attacks.", icon = "Missing", price = 5, price_up = 5, stock = 1, max_stock = 1, Shelf_Chance= 15},
-        new SabreASUpgrade() { name = "Sabre Attack Speed", description = "Increases the Attack Speed of your Sabre Attacks.", icon = "Missing", price = 5, price_up = 5 , stock = 1, max_stock = 2, Shelf_Chance= 10},
-        new HealthUpgrade() { name = "Health", description = "Refils Missing Health.", icon = "Missing", price = 3, price_up = 1, stock = 1, max_stock = 3, Shelf_Chance= 25},
-        new MaxHealthUpgrade() { name = "Health Up", description = "Increases Max Health and Health.", icon = "Missing", price = 5, price_up = 5, stock = 1, max_stock = 2, Shelf_Chance= 10},
-        new PistolDamage() { name = "Pistol Damage", description = "Increases the Damage of your Pistol Attacks.", icon = "Missing", price = 5, price_up = 5, stock = 2, max_stock = 2, Shelf_Chance= 10},
-        new PistolReloadSpeed() { name = "Pistol Reload Rate", description = "Decreases the time spent reloading your Pistol.", icon = "Missing", price = 5, price_up = 5, stock = 2, max_stock = 2, Shelf_Chance= 10},
-        new PistolMaxAmmo() { name = "Pistol Mag Up", description = "Adds another bullet to your Pistol magazine.", icon = "Missing", price = 3, price_up = 5, stock = 2, max_stock = 2, Shelf_Chance= 15},
-        new PistolAmmo() { name = "Pistol Ammo x1", description = "Provides Another bullet for your Pistol.", icon = "Missing", price = 4, price_up = 0, stock = 2, max_stock = 2, Shelf_Chance= 35},
+        new SabreDmgUpgrade() { name = "Sabre Damage", description = "Increases the damage of your Sabre Attacks.", iconName = "Damage", price = 5, price_up = 5, stock = 1, max_stock = 1, Shelf_Chance= 15},
+        new SabreASUpgrade() { name = "Sabre Attack Speed", description = "Increases the Attack Speed of your Sabre Attacks.", iconName = "AttackSpeed", price = 5, price_up = 5 , stock = 1, max_stock = 2, Shelf_Chance= 10},
+        new HealthUpgrade() { name = "Health", description = "Refils Missing Health.", iconName = "Health", price = 3, price_up = 1, stock = 1, max_stock = 3, Shelf_Chance= 25},
+        new MaxHealthUpgrade() { name = "Health Up", description = "Increases Max Health and Health.", iconName = "HealthMax", price = 5, price_up = 5, stock = 1, max_stock = 2, Shelf_Chance= 10},
+        new PistolDamage() { name = "Pistol Damage", description = "Increases the Damage of your Pistol Attacks.", iconName = "PistolDamage", price = 5, price_up = 5, stock = 2, max_stock = 2, Shelf_Chance= 10},
+        new PistolReloadSpeed() { name = "Pistol Reload Rate", description = "Decreases the time spent reloading your Pistol.", iconName = "ReloadSpeed", price = 5, price_up = 5, stock = 2, max_stock = 2, Shelf_Chance= 10},
+        new PistolMaxAmmo() { name = "Pistol Mag Up", description = "Adds another bullet to your Pistol magazine.", iconName = "MaxAmmo", price = 3, price_up = 5, stock = 2, max_stock = 2, Shelf_Chance= 15},
+        new PistolAmmo() { name = "Pistol Ammo x1", description = "Provides Another bullet for your Pistol.", iconName = "Ammo", price = 4, price_up = 0, stock = 2, max_stock = 2, Shelf_Chance= 35},
     };
 
     public Pc PlayerController;
@@ -133,7 +133,7 @@ public class Upgrade
 
     public string description;
 
-    public string icon;
+    public string iconName;
 
     public int price;
 

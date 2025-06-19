@@ -10,7 +10,12 @@ public class ShelfDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     public Text DescText;
     public Text PriceText;
 
-    public Image Icon;
+    [SerializeField]
+    public List<Icon> Icons = new List<Icon>();
+
+    protected Sprite ChosenIcon;
+
+    public Image IconRenderer;
 
     public int Stock;
 
@@ -24,6 +29,8 @@ public class ShelfDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         DescText.text = shelf.description;
         PriceText.text = shelf.price.ToString();
         Stock = shelf.stock;
+        ChosenIcon = Icons.Find(x => x.IconName == shelf.iconName).sprite;
+        IconRenderer.sprite = ChosenIcon;
         HeldUpgrade = shelf;
     }
 
@@ -46,4 +53,13 @@ public class ShelfDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         
     }
 
+
+
+}
+
+[System.Serializable]
+public class Icon
+{
+    public Sprite sprite;
+    public string IconName;
 }

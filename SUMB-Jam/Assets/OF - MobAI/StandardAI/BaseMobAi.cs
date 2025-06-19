@@ -125,7 +125,24 @@ public class BaseMobAi : MonoBehaviour
             }
             Destroy(this.gameObject);
         }
+        else
+        {
+            moveSpeed = MS / 10f;
+            agent.speed = moveSpeed;
+            spriteRenderer.color = Color.red;
+            StartCoroutine(StopBeingRedAfter(0.2f));
+        }
     }
+
+    public IEnumerator StopBeingRedAfter(float time)
+    {
+        yield return new WaitForSeconds(time);
+        spriteRenderer.color = Color.white;
+        moveSpeed = MS;
+        agent.speed = moveSpeed;
+    }
+
+
     public int getHealth()
     {
         return health;
@@ -169,7 +186,10 @@ public class BaseMobAi : MonoBehaviour
     private async void AniDelayer(int timer)
     {
         await Task.Delay(timer);
-        anim.SetBool("IsEAttacking", false);
+        if (anim != null)
+        {
+            anim.SetBool("IsEAttacking", false);
+        }
         //anim.SetBool("IsERunning", true);
     }
 
