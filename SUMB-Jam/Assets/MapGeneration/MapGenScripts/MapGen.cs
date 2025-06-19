@@ -28,7 +28,7 @@ public class MapGen : MonoBehaviour
 
     protected int DirectionPointer = 0; // 0 -Forwards, 1 -Left, 2 -Right
 
-    protected int RoomCounter = 0;
+    public int RoomCounter = 0;
 
     protected int ShopCounter = 1;
 
