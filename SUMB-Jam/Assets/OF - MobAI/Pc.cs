@@ -55,6 +55,7 @@ public class Pc : MonoBehaviour
     protected bool Invincible;
 
     public GameObject R;
+    private bool LoopLowHealthSoundsB;
 
     // Start is called before the first frame update
     void Start()
@@ -70,7 +71,7 @@ public class Pc : MonoBehaviour
     {
         HandleInput();
         Movement();
-        checkHealth();
+        
     }
 
     private void checkHealth()
@@ -82,6 +83,7 @@ public class Pc : MonoBehaviour
             playerSpeed = 0;
         }
     }
+
 
     private void HandleInput()
     {
@@ -127,9 +129,17 @@ public class Pc : MonoBehaviour
         if (Reload != true && Ammo > 0)
         {
             Ammo--;
-            
+
+            if (UnityEngine.Random.Range(0, 100) > 80)
+            {
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SpawnSoundPrefab(transform.position, "PlayerAttackVL");
+            }
+
             UpdateHUD();
             var x = Instantiate(projectile[0], gunBase.transform.position, gunBase.transform.rotation);
+
+            GameObject.Find("SoundManager").GetComponent<SoundManager>().SpawnSoundPrefab(transform.position,"GunShot");
+
             x.GetComponent<PlayerProjectile>().target = reticle;
             x.GetComponent<PlayerProjectile>().Damage = PistolProjDamage;
             x.transform.localScale = x.transform.localScale * PistolProjSize;
@@ -146,11 +156,16 @@ public class Pc : MonoBehaviour
     {
         if (!attackIsCoolingDown)
         {
+            if (UnityEngine.Random.Range(0, 100) > 80)
+            {
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SpawnSoundPrefab(transform.position, "PlayerAttackVL");
+            }
+
             attackIsCoolingDown = true;
             Vector3 MousePos = Input.mousePosition;
             var x = Instantiate(projectile[1], transform.position, gunBase.transform.rotation);
 
-            GameObject.Find("SoundManager").GetComponent<SoundManager>().SpawnSoundPrefab(transform, 0);
+            GameObject.Find("SoundManager").GetComponent<SoundManager>().SpawnSoundPrefab(transform.position, "SwordAttacks");
 
             x.GetComponent<PlayerProjectile>().target = reticle;
             x.GetComponent<PlayerProjectile>().Damage = SabreProjDamage;
@@ -201,7 +216,11 @@ public class Pc : MonoBehaviour
 
     private IEnumerator GUNReload()
     {
+        
         yield return new WaitForSeconds(ReloadDuration);
+
+        GameObject.Find("SoundManager").GetComponent<SoundManager>().SpawnSoundPrefab(transform.position, "Reload");
+
         int NewMag = 0;
         int AmmoLost = 0;
         NewMag = MaxAmmo;
@@ -241,23 +260,52 @@ public class Pc : MonoBehaviour
 
     public void TakeDamage(int Amount)
     {
+        GameObject.Find("SoundManager").GetComponent<SoundManager>().SpawnSoundPrefab(transform.position, "DamageTaken");
+
         if (!Invincible)
         {
+            Invincible = true;
+            StartCoroutine(TempInvincible());
             Health -= Amount;
             UpdateHUD();
             spriteRenderer.color = Color.red;
-            if(Health <= 0)
+
+            if (Health <= 1)
             {
-                ThePlayerDiedLOL();
+                if (!LoopLowHealthSoundsB)
+                {
+                    LoopLowHealthSoundsB = true;
+                    GameObject.Find("LoopingLowHealthSound").GetComponent<AudioSource>().Play();
+                }
             }
-            Invincible = true;
-            StartCoroutine(TempInvincible());
+            else
+            {
+                GameObject.Find("LoopingLowHealthSound").GetComponent<AudioSource>().Stop();
+            }
+
+            if (Health <= 0)
+            {
+                Death();
+            }
+            else
+            {
+                if (UnityEngine.Random.Range(0, 100) > 15)
+                {
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().SpawnSoundPrefab(transform.position, "PlayerHitVL");
+                }
+            }
+            
         }
     }
 
-    private static void ThePlayerDiedLOL()
+    private void Death()
     {
-        Debug.Log("RIP BOZO");
+        GameObject.Find("LoopingLowHealthSound").GetComponent<AudioSource>().Stop();
+        GameObject.Find("SoundManager").GetComponent<SoundManager>().SpawnSoundPrefab(transform.position, "Death");
+        GameObject.Find("SoundManager").GetComponent<SoundManager>().SpawnSoundPrefab(transform.position, "PlayerDeathVL");
+        DeathScreen.SetActive(true);
+        aimer.SetActive(false);
+        playerSpeed = 0;
     }
 
     protected IEnumerator TempInvincible()

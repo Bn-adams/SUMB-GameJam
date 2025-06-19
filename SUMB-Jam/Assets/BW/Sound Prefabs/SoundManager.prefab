@@ -44,21 +44,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f1adfc77554274096b12eceb2d9f9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SoundPrefab: {fileID: 0}
+  SoundPrefab: {fileID: 2203809303039762550, guid: 3d8d44f6ab3d0e94c900ac4f5364fb86, type: 3}
   GlobalSoundVolume: 1
   soundCollections:
   - soundPrefabs:
+    - {fileID: 8300000, guid: a22b2e06e7abc7a47a7e419f3fc3a211, type: 3}
+    - {fileID: 8300000, guid: ebd4603c119b86141929778fbbf0693f, type: 3}
+    - {fileID: 8300000, guid: e87c91245b0b1f74994d9ff0d5df665d, type: 3}
+    - {fileID: 8300000, guid: e53af57cbadac3846b879dd981678917, type: 3}
+    - {fileID: 8300000, guid: 398acce2cc90ba64191dc6b7ca89fc5e, type: 3}
     - {fileID: 8300000, guid: f4b4f37c93c233947b107abab33a79e4, type: 3}
     - {fileID: 8300000, guid: e8f8837231f5c574b9c5fa4e97fbc69d, type: 3}
-    - {fileID: 8300000, guid: ca9ff056ae302e443b228442f0eee8fb, type: 3}
-    - {fileID: 8300000, guid: 80995f28b7cdc3c4a93aa3e3251707e3, type: 3}
-    - {fileID: 8300000, guid: 37ac771b2b675384aaf2b54029136833, type: 3}
-    - {fileID: 8300000, guid: ebfd6fe4dacca5e42bbc310cfcda2f0f, type: 3}
-    - {fileID: 8300000, guid: 62c281d2b8230b844bb43fa52d75e12e, type: 3}
     Name: SwordAttacks
-  - soundPrefabs:
-    - {fileID: 0}
-    Name: PlayerHitVL
   - soundPrefabs:
     - {fileID: 8300000, guid: d2770a42df2cb7240a2d195adaad5e87, type: 3}
     - {fileID: 8300000, guid: a34a80aa573312c48867b8a813db224c, type: 3}
@@ -66,6 +63,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: bfd8e8b80badf4d4f88d5585f6e254fa, type: 3}
     - {fileID: 8300000, guid: 9554aba79e59e1346bbd2e7a4e7f3a04, type: 3}
     - {fileID: 8300000, guid: 54d749887e806a04fa31486cd5674d8e, type: 3}
+    - {fileID: 8300000, guid: 09536724bf90afb4a96a1934a9949e83, type: 3}
     Name: EnemyHitVL
   - soundPrefabs:
     - {fileID: 8300000, guid: 1fdf03de3b18a2f4f91191d8e5b8a99f, type: 3}
@@ -86,14 +84,10 @@ MonoBehaviour:
     Name: SpendCoin
   - soundPrefabs:
     - {fileID: 8300000, guid: f70ea843b15e0bd4c8dbb945925bf10c, type: 3}
-    - {fileID: 8300000, guid: f8408273754b1f441b283426691cfb6e, type: 3}
     Name: LowHealth
   - soundPrefabs:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 54c86f67f631b104180efd11d15618d0, type: 3}
     Name: Death
-  - soundPrefabs:
-    - {fileID: 0}
-    Name: PlayerAttacksVL
   - soundPrefabs:
     - {fileID: 8300000, guid: c93ec61b3b954964ea643d10a256e483, type: 3}
     - {fileID: 8300000, guid: 625ea38daf9dd5b4690e2e13eb6f7ed9, type: 3}
@@ -107,3 +101,44 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 13e707796169aec43b6fdaeeb853c88b, type: 3}
     - {fileID: 8300000, guid: 9d3f20b9b91c05f459a65632df5ea165, type: 3}
     Name: Walking
+  - soundPrefabs:
+    - {fileID: 8300000, guid: 86ce9062bb8ec484b940c7d51bc276f7, type: 3}
+    - {fileID: 8300000, guid: d48aeb33fcdb7a64ba8ced104d65c243, type: 3}
+    - {fileID: 8300000, guid: 53f71e7d30a860542b10a5edaa553689, type: 3}
+    - {fileID: 8300000, guid: 6eb7f45de846b8848b71c3df9a3b0052, type: 3}
+    - {fileID: 8300000, guid: 5ee41e47d813d504e9570da33a90be18, type: 3}
+    Name: Reload
+  - soundPrefabs:
+    - {fileID: 8300000, guid: 737f1237010c8fc41a426a96ff4c4c7b, type: 3}
+    Name: DamageTaken
+  - soundPrefabs:
+    - {fileID: 8300000, guid: 6d02567dc547b844ea50fd01bde8dd2c, type: 3}
+    - {fileID: 8300000, guid: 117e819f13fe17c4eb235a4473ac9b2e, type: 3}
+    - {fileID: 8300000, guid: 9d6560bb7f0e6fd4e9e6183f42b591be, type: 3}
+    - {fileID: 8300000, guid: 8b566182f61351f488649139f101869f, type: 3}
+    - {fileID: 8300000, guid: e9ac8c46f81d8bf46b54ddd545f0bf98, type: 3}
+    Name: HealthPickup
+  - soundPrefabs:
+    - {fileID: 8300000, guid: f057f9092c0b1ea428717eb81533cc55, type: 3}
+    Name: AmmoPickup
+  - soundPrefabs:
+    - {fileID: 8300000, guid: cc2e11677bff5924c80b9e0b25194ba5, type: 3}
+    - {fileID: 8300000, guid: 3422f707a2480d74b9411aa491ece5ca, type: 3}
+    - {fileID: 8300000, guid: 72601762a684f074784285731e70397f, type: 3}
+    - {fileID: 8300000, guid: fe3599f0d60363848b751d1d91b3e990, type: 3}
+    Name: EnemyAttackVL
+  - soundPrefabs:
+    - {fileID: 8300000, guid: 2d2da8b206813c1499929e24bb2aa46d, type: 3}
+    - {fileID: 8300000, guid: d4ccb477d79048d4094d19cca3276fa6, type: 3}
+    - {fileID: 8300000, guid: eea02ddd1599d7d46abe37b62aef4080, type: 3}
+    - {fileID: 8300000, guid: eebb1797b9df1f747a7f4ceb9c3b5d9e, type: 3}
+    Name: PlayerDeathVL
+  - soundPrefabs:
+    - {fileID: 8300000, guid: 06b46e71f77e7d84f9703acef176c8fc, type: 3}
+    - {fileID: 8300000, guid: 813ed28a686a95640ad57b58aaeafe0c, type: 3}
+    - {fileID: 8300000, guid: 04ede632d36279949b706040134eca35, type: 3}
+    - {fileID: 8300000, guid: e7d22b75fc843b9428b0fd2297e82f66, type: 3}
+    - {fileID: 8300000, guid: b39915019ddad7048825cd6b9cda4ada, type: 3}
+    - {fileID: 8300000, guid: 8b91e7c8a8a0b634495908f27a2f5553, type: 3}
+    - {fileID: 8300000, guid: d6265f1ede15bc247b9454027ec7e1ce, type: 3}
+    Name: PlayerAttackVL

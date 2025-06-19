@@ -9,17 +9,19 @@ public class SoundManager : MonoBehaviour
     public float GlobalSoundVolume;
 
     [SerializeField] List<SoundCollection> soundCollections;
-    public void SpawnSoundPrefab(Transform prefabPosition, int prefabElement)
+
+    public void SpawnSoundPrefab(Vector3 prefabPosition, string SoundCollection)
     {
-        if (prefabElement > soundCollections.Count - 1)
+        List<AudioClip> SoundClips = soundCollections.Find(x => x.Name == SoundCollection).soundPrefabs;
+        GameObject spawnedSoundPrefab = Instantiate(SoundPrefab, prefabPosition, Quaternion.identity);
+        if (spawnedSoundPrefab != null)
         {
-            List<AudioClip> SoundClips = soundCollections[prefabElement].soundPrefabs;
-            GameObject spawnedSoundPrefab = Instantiate(SoundPrefab, prefabPosition);
             SoundPlay sound = spawnedSoundPrefab.GetComponent<SoundPlay>();
-            sound.clip = SoundClips[Random.Range(0, SoundClips.Count)];
+            sound.clip = SoundClips[Random.Range(0, SoundClips.Count -1)];
             sound.volume = GlobalSoundVolume;
             sound.PlaySoundEffect();
         }
+        
     }
 }
 

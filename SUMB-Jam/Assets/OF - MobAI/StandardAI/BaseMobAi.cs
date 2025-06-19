@@ -118,9 +118,13 @@ public class BaseMobAi : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        GameObject.Find("SoundManager").GetComponent<SoundManager>().SpawnSoundPrefab(transform.position, "DamageTaken");
+        
+
         //Debug.Log("Enemy takes "+damage+" damage");
         if (health <= 0)
         {
+
             if (UnityEngine.Random.Range(0, 100) > 50)
             {
                 Instantiate(PickupPrefab, transform.position, Quaternion.identity);
@@ -129,6 +133,11 @@ public class BaseMobAi : MonoBehaviour
         }
         else
         {
+            if (UnityEngine.Random.Range(0, 100) > 15)
+            {
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SpawnSoundPrefab(transform.position, "EnemyHitVL");
+            }
+
             moveSpeed = MS / 10f;
             agent.speed = moveSpeed;
             spriteRenderer.color = Color.red;
@@ -343,6 +352,10 @@ public class AttackPlayer : Node
         {
             if (me.isOnCoolDown == false)
             {
+                if (UnityEngine.Random.Range(0, 100) > 80)
+                {
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().SpawnSoundPrefab(me.transform.position, "EnemyAttackVL");
+                }
                 //me.anim.SetBool("IsERunning", false);
                 me.anim.SetBool("IsEAttacking", true);
                 me.SlashAttack();
@@ -379,6 +392,11 @@ public class RangedAttack : Node
     {
         if(me.isOnCoolDown == false)
         {
+            if (UnityEngine.Random.Range(0, 100) > 80)
+            {
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SpawnSoundPrefab(me.transform.position, "EnemyAttackVL");
+            }
+
             me.FireProjectile();
             me.isOnCoolDown = true;
             me.reloading = true;
