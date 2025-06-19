@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 7.5
+  speed: 5
   lifetime: 0.15
   Damage: 1
   ThisIsSword: 1
@@ -94,7 +94,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 99
   m_Sprite: {fileID: 21300000, guid: d07a63cc6c9633948834f93c68e24cfa, type: 3}
-  m_Color: {r: 0.8254717, g: 0.84532005, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.114498615, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
