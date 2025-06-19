@@ -39,12 +39,43 @@ public class PlayerProjectile : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             other.gameObject.GetComponent<BaseMobAi>().TakeDamage(Damage);
+            if (!ThisIsSword)
+                Destroy(this.gameObject);
+        }
+        else if (other.gameObject.tag == "Projectile")
+        {
+            Debug.Log("Hit Enemy projectile");
+            if (!ThisIsSword)
+                Destroy(this.gameObject);
         }
         else
         {
             Debug.Log("Projectile: NOT TARGET HIT");
-        }
-        if (!ThisIsSword)
             Destroy(this.gameObject);
+        }
+        
     }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+
+        if (other.gameObject.tag == "Enemy")
+        {
+            other.gameObject.GetComponent<BaseMobAi>().TakeDamage(Damage);
+            if (!ThisIsSword)
+                Destroy(this.gameObject);
+        }
+        else if(other.gameObject.tag == "Projectile")
+        {
+            Debug.Log("Hit Enemy projectile");
+            if (!ThisIsSword)
+                Destroy(this.gameObject);
+        }
+        else
+        {
+            Debug.Log("Projectile: NOT TARGET HIT");
+            Destroy(this.gameObject);
+        }
+
+    }
+
 }

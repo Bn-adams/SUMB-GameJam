@@ -53,7 +53,7 @@ public class Pc : MonoBehaviour
 
     protected bool Invincible;
 
-
+    public GameObject R;
 
     // Start is called before the first frame update
     void Start()
@@ -61,7 +61,7 @@ public class Pc : MonoBehaviour
         playerRb = GetComponent<Rigidbody2D>();
         IsFacingLeft = true;
         UpdateStats();
-        
+        R.SetActive(false);
     }
 
     // Update is called once per frame
@@ -90,6 +90,14 @@ public class Pc : MonoBehaviour
         if(Input.GetMouseButtonDown(1))
         {
             GUN();
+            if (Reload == false && Ammo < MaxAmmo)
+            {
+                R.SetActive(true);
+            }
+            else
+            {
+                R.SetActive(false);
+            }
         }
 
         
@@ -107,6 +115,7 @@ public class Pc : MonoBehaviour
         if (Reload != true && Ammo > 0)
         {
             Ammo--;
+            
             UpdateHUD();
             var x = Instantiate(projectile[0], gunBase.transform.position, gunBase.transform.rotation);
             x.GetComponent<PlayerProjectile>().target = reticle;
@@ -118,6 +127,7 @@ public class Pc : MonoBehaviour
             Reload = true;
             StartCoroutine(GUNReload());
         }
+
     }
 
     private void Attack()
@@ -177,12 +187,22 @@ public class Pc : MonoBehaviour
     private IEnumerator GUNReload()
     {
         yield return new WaitForSeconds(ReloadDuration);
-        int NewMag = MaxAmmo;
+        int NewMag = 0;
+        int AmmoLost = 0;
+        NewMag = MaxAmmo;
         if (NewMag > Total_Ammo)
         {
             NewMag = Total_Ammo;
         }
-        Total_Ammo -= NewMag;
+        if (Ammo > 0)
+        {
+            AmmoLost = NewMag - Ammo;
+        }
+        else
+        {
+            AmmoLost = NewMag;
+        }
+        Total_Ammo -= AmmoLost;
         Ammo = NewMag;
         UpdateHUD();
         Reload = false;

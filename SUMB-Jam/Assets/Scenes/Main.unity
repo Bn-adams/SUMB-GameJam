@@ -175,6 +175,110 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 141930961565395608, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: IconRenderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 141930961565395608, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 141930961565395608, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[0].name
+      value: Ammo
+      objectReference: {fileID: 0}
+    - target: {fileID: 141930961565395608, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[1].name
+      value: Health
+      objectReference: {fileID: 0}
+    - target: {fileID: 141930961565395608, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[2].name
+      value: PistolDamage
+      objectReference: {fileID: 0}
+    - target: {fileID: 141930961565395608, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[3].name
+      value: AttackSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 141930961565395608, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[4].name
+      value: Damage
+      objectReference: {fileID: 0}
+    - target: {fileID: 141930961565395608, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[5].name
+      value: HealthMax
+      objectReference: {fileID: 0}
+    - target: {fileID: 141930961565395608, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[6].name
+      value: MaxAmmo
+      objectReference: {fileID: 0}
+    - target: {fileID: 141930961565395608, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[7].name
+      value: ReloadSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 141930961565395608, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7903606907300294c934679fd30e2590, type: 3}
+    - target: {fileID: 141930961565395608, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[1].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e8a05ef2e00010d4abc1a729acf13ec8, type: 3}
+    - target: {fileID: 141930961565395608, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[2].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 88b3f5b48080ea34f86155bd73fabb9c, type: 3}
+    - target: {fileID: 141930961565395608, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[3].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 768887d6d7692e04b8de45f050e2558a, type: 3}
+    - target: {fileID: 141930961565395608, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[4].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 136dca03bb30e414e8ce6563d56a9b89, type: 3}
+    - target: {fileID: 141930961565395608, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[5].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 87511950634a60b44bac8e0649035dcd, type: 3}
+    - target: {fileID: 141930961565395608, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[6].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7b34550fc2188d442b1c48bea269b956, type: 3}
+    - target: {fileID: 141930961565395608, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[7].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5d7e54e7f5aea5c488161680985c760f, type: 3}
+    - target: {fileID: 141930961565395608, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[0].IconName
+      value: Ammo
+      objectReference: {fileID: 0}
+    - target: {fileID: 141930961565395608, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[1].IconName
+      value: Health
+      objectReference: {fileID: 0}
+    - target: {fileID: 141930961565395608, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[2].IconName
+      value: PistolDamage
+      objectReference: {fileID: 0}
+    - target: {fileID: 141930961565395608, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[3].IconName
+      value: AttackSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 141930961565395608, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[4].IconName
+      value: Damage
+      objectReference: {fileID: 0}
+    - target: {fileID: 141930961565395608, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[5].IconName
+      value: HealthMax
+      objectReference: {fileID: 0}
+    - target: {fileID: 141930961565395608, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[6].IconName
+      value: MaxAmmo
+      objectReference: {fileID: 0}
+    - target: {fileID: 141930961565395608, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[7].IconName
+      value: ReloadSpeed
+      objectReference: {fileID: 0}
     - target: {fileID: 3883017926059923956, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -215,9 +319,233 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7243874127548050756, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: IconRenderer
+      value: 
+      objectReference: {fileID: 223195333}
+    - target: {fileID: 7243874127548050756, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243874127548050756, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[0].name
+      value: Ammo
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243874127548050756, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[1].name
+      value: Health
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243874127548050756, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[2].name
+      value: PistolDamage
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243874127548050756, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[3].name
+      value: AttackSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243874127548050756, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[4].name
+      value: Damage
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243874127548050756, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[5].name
+      value: HealthMax
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243874127548050756, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[6].name
+      value: MaxAmmo
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243874127548050756, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[7].name
+      value: ReloadSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243874127548050756, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[8].name
+      value: + Health
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243874127548050756, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7903606907300294c934679fd30e2590, type: 3}
+    - target: {fileID: 7243874127548050756, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[1].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e8a05ef2e00010d4abc1a729acf13ec8, type: 3}
+    - target: {fileID: 7243874127548050756, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[2].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 88b3f5b48080ea34f86155bd73fabb9c, type: 3}
+    - target: {fileID: 7243874127548050756, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[3].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 768887d6d7692e04b8de45f050e2558a, type: 3}
+    - target: {fileID: 7243874127548050756, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[4].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 136dca03bb30e414e8ce6563d56a9b89, type: 3}
+    - target: {fileID: 7243874127548050756, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[5].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 87511950634a60b44bac8e0649035dcd, type: 3}
+    - target: {fileID: 7243874127548050756, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[6].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7b34550fc2188d442b1c48bea269b956, type: 3}
+    - target: {fileID: 7243874127548050756, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[7].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5d7e54e7f5aea5c488161680985c760f, type: 3}
+    - target: {fileID: 7243874127548050756, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[8].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e8a05ef2e00010d4abc1a729acf13ec8, type: 3}
+    - target: {fileID: 7243874127548050756, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[0].IconName
+      value: Ammo
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243874127548050756, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[1].IconName
+      value: Health
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243874127548050756, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[2].IconName
+      value: PistolDamage
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243874127548050756, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[3].IconName
+      value: AttackSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243874127548050756, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[4].IconName
+      value: Damage
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243874127548050756, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[5].IconName
+      value: HealthMax
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243874127548050756, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[6].IconName
+      value: MaxAmmo
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243874127548050756, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[7].IconName
+      value: ReloadSpeed
+      objectReference: {fileID: 0}
     - target: {fileID: 7516769618913162902, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
-      propertyPath: playerSpeed
-      value: 1.5
+      propertyPath: Ammo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516769618913162902, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: MaxAmmo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516769618913162902, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: PistolProjDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245390870608570557, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: IconRenderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245390870608570557, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245390870608570557, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[0].name
+      value: Ammo
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245390870608570557, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[1].name
+      value: Health
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245390870608570557, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[2].name
+      value: PistolDamage
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245390870608570557, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[3].name
+      value: AttackSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245390870608570557, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[4].name
+      value: Damage
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245390870608570557, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[5].name
+      value: HealthMax
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245390870608570557, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[6].name
+      value: MaxAmmo
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245390870608570557, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[7].name
+      value: ReloadSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245390870608570557, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7903606907300294c934679fd30e2590, type: 3}
+    - target: {fileID: 8245390870608570557, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[1].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e8a05ef2e00010d4abc1a729acf13ec8, type: 3}
+    - target: {fileID: 8245390870608570557, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[2].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 88b3f5b48080ea34f86155bd73fabb9c, type: 3}
+    - target: {fileID: 8245390870608570557, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[3].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 768887d6d7692e04b8de45f050e2558a, type: 3}
+    - target: {fileID: 8245390870608570557, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[4].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 136dca03bb30e414e8ce6563d56a9b89, type: 3}
+    - target: {fileID: 8245390870608570557, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[5].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 87511950634a60b44bac8e0649035dcd, type: 3}
+    - target: {fileID: 8245390870608570557, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[6].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7b34550fc2188d442b1c48bea269b956, type: 3}
+    - target: {fileID: 8245390870608570557, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[7].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5d7e54e7f5aea5c488161680985c760f, type: 3}
+    - target: {fileID: 8245390870608570557, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[0].IconName
+      value: Ammo
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245390870608570557, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[1].IconName
+      value: Health
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245390870608570557, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[2].IconName
+      value: PistolDamage
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245390870608570557, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[3].IconName
+      value: AttackSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245390870608570557, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[4].IconName
+      value: Damage
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245390870608570557, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[5].IconName
+      value: HealthMax
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245390870608570557, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[6].IconName
+      value: MaxAmmo
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245390870608570557, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: Icons.Array.data[7].IconName
+      value: ReloadSpeed
       objectReference: {fileID: 0}
     - target: {fileID: 9197066253054076909, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
       propertyPath: m_Name
@@ -375,6 +703,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 407585502}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &223195333 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7741734885127408338, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+  m_PrefabInstance: {fileID: 42857003}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &407585500
 GameObject:
   m_ObjectHideFlags: 0
