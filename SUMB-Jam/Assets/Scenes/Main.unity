@@ -215,17 +215,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4745737042302363386, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
-      propertyPath: FullHeartContainerSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 121e179dc33f4ac4193dac765a7315ff, type: 3}
-    - target: {fileID: 4745737042302363386, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
-      propertyPath: EmptyHeartContainerSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 60b01eaf690288540b08690308dbfd48, type: 3}
-    - target: {fileID: 5521610281131411113, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
-      propertyPath: m_SortingOrder
-      value: 100
+    - target: {fileID: 7516769618913162902, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: playerSpeed
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 9197066253054076909, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
       propertyPath: m_Name
@@ -352,7 +344,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2
+  orthographic size: 1.75
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -414,7 +406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowTagret: {fileID: 42857004}
   offset: {x: 0, y: 0.75, z: 0}
-  FollowStrength: 2
+  FollowStrength: 1
 --- !u!4 &407585502
 Transform:
   m_ObjectHideFlags: 0
