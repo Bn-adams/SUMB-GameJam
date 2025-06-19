@@ -871,6 +871,113 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1495216773
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1495216775}
+  - component: {fileID: 1495216774}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1495216774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495216773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90f1adfc77554274096b12eceb2d9f9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundPrefab: {fileID: 0}
+  GlobalSoundVolume: 0
+  soundCollections:
+  - soundPrefabs:
+    - {fileID: 8300000, guid: f4b4f37c93c233947b107abab33a79e4, type: 3}
+    - {fileID: 8300000, guid: e8f8837231f5c574b9c5fa4e97fbc69d, type: 3}
+    - {fileID: 8300000, guid: ca9ff056ae302e443b228442f0eee8fb, type: 3}
+    - {fileID: 8300000, guid: 80995f28b7cdc3c4a93aa3e3251707e3, type: 3}
+    - {fileID: 8300000, guid: 37ac771b2b675384aaf2b54029136833, type: 3}
+    - {fileID: 8300000, guid: ebfd6fe4dacca5e42bbc310cfcda2f0f, type: 3}
+    - {fileID: 8300000, guid: 62c281d2b8230b844bb43fa52d75e12e, type: 3}
+    Name: SwordAttacks
+  - soundPrefabs:
+    - {fileID: 0}
+    Name: PlayerHitVL
+  - soundPrefabs:
+    - {fileID: 8300000, guid: d2770a42df2cb7240a2d195adaad5e87, type: 3}
+    - {fileID: 8300000, guid: a34a80aa573312c48867b8a813db224c, type: 3}
+    - {fileID: 8300000, guid: 6d57ad80a9de75543aadb8466f993c2c, type: 3}
+    - {fileID: 8300000, guid: bfd8e8b80badf4d4f88d5585f6e254fa, type: 3}
+    - {fileID: 8300000, guid: 9554aba79e59e1346bbd2e7a4e7f3a04, type: 3}
+    - {fileID: 8300000, guid: 54d749887e806a04fa31486cd5674d8e, type: 3}
+    Name: EnemyHitVL
+  - soundPrefabs:
+    - {fileID: 8300000, guid: 1fdf03de3b18a2f4f91191d8e5b8a99f, type: 3}
+    - {fileID: 8300000, guid: 8e0797786160f4a4786af4f479075e6d, type: 3}
+    - {fileID: 8300000, guid: f0672e089046a5b45b4f5df0a5a33f1b, type: 3}
+    - {fileID: 8300000, guid: c59e3f42bf9d07045b64b9cf98666f41, type: 3}
+    - {fileID: 8300000, guid: 22e305db4d604da489814c548de5eee1, type: 3}
+    Name: ProjectileBlocked
+  - soundPrefabs:
+    - {fileID: 8300000, guid: 623e8dfc732dba048a6b528e825ad488, type: 3}
+    - {fileID: 8300000, guid: 7407f00c01c014d45a73fc0f90685d7b, type: 3}
+    - {fileID: 8300000, guid: 49b5ec0f6699e544a9f9a3c68e2005f4, type: 3}
+    - {fileID: 8300000, guid: 39959913382b9744cb9e26044225f33c, type: 3}
+    - {fileID: 8300000, guid: e945a84223dfc424ba25a2a33fb7fc6e, type: 3}
+    Name: PickupCoin
+  - soundPrefabs:
+    - {fileID: 8300000, guid: f9842a07c24692b488efd79a5e8a283e, type: 3}
+    Name: SpendCoin
+  - soundPrefabs:
+    - {fileID: 8300000, guid: f70ea843b15e0bd4c8dbb945925bf10c, type: 3}
+    - {fileID: 8300000, guid: f8408273754b1f441b283426691cfb6e, type: 3}
+    Name: LowHealth
+  - soundPrefabs:
+    - {fileID: 0}
+    Name: Death
+  - soundPrefabs:
+    - {fileID: 0}
+    Name: PlayerAttacksVL
+  - soundPrefabs:
+    - {fileID: 8300000, guid: c93ec61b3b954964ea643d10a256e483, type: 3}
+    - {fileID: 8300000, guid: 625ea38daf9dd5b4690e2e13eb6f7ed9, type: 3}
+    - {fileID: 8300000, guid: 97cade6a982104749b1c93d22a43d216, type: 3}
+    - {fileID: 8300000, guid: 0a1a92f43f01ff24fbc58dd4d425f363, type: 3}
+    Name: GunShot
+  - soundPrefabs:
+    - {fileID: 8300000, guid: d4960e93adc62e74e82222348d8dac88, type: 3}
+    - {fileID: 8300000, guid: bf17da153c2725749a494cfa41e6f363, type: 3}
+    - {fileID: 8300000, guid: eb88b25a2473a2e438e63f93320d4e4d, type: 3}
+    - {fileID: 8300000, guid: 13e707796169aec43b6fdaeeb853c88b, type: 3}
+    - {fileID: 8300000, guid: 9d3f20b9b91c05f459a65632df5ea165, type: 3}
+    Name: Walking
+--- !u!4 &1495216775
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495216773}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 965.49066, y: 495.07898, z: -7.5762305}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1502436272
 GameObject:
   m_ObjectHideFlags: 0
@@ -1096,3 +1203,4 @@ SceneRoots:
   - {fileID: 407585502}
   - {fileID: 1068068972}
   - {fileID: 773108430}
+  - {fileID: 1495216775}

@@ -76,7 +76,6 @@ public class PlayerController : MonoBehaviour
             attackHitBox.SetActive(true);
             Debug.Log("Start of attack!");
 
-            soundManager.SpawnSoundPrefab(transform.position, 0);
             StartCoroutine(Attacking());
         }
     }

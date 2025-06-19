@@ -149,6 +149,9 @@ public class Pc : MonoBehaviour
             attackIsCoolingDown = true;
             Vector3 MousePos = Input.mousePosition;
             var x = Instantiate(projectile[1], transform.position, gunBase.transform.rotation);
+
+            GameObject.Find("SoundManager").GetComponent<SoundManager>().SpawnSoundPrefab(transform, 0);
+
             x.GetComponent<PlayerProjectile>().target = reticle;
             x.GetComponent<PlayerProjectile>().Damage = SabreProjDamage;
             x.transform.localScale = x.transform.localScale * SabreProjSize;

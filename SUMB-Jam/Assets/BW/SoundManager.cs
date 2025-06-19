@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public SoundPlay soundPlayScript;
-    
-    [SerializeField] List<GameObject> soundPrefabs;
-    public void SpawnSoundPrefab(Vector3 prefabPosition, int prefabElement)
+
+    public GameObject SoundPrefab;
+    public float GlobalSoundVolume;
+
+    [SerializeField] List<SoundCollection> soundCollections;
+    public void SpawnSoundPrefab(Transform prefabPosition, int prefabElement)
     {
-        GameObject spawnedSoundPrefab = Instantiate(soundPrefabs[prefabElement], prefabPosition, Quaternion.identity);
-        if (spawnedSoundPrefab != null)
+        if (prefabElement > soundCollections.Count - 1)
         {
-            soundPlayScript = spawnedSoundPrefab.GetComponent<SoundPlay>();
+            List<AudioClip> SoundClips = soundCollections[prefabElement].soundPrefabs;
+            GameObject spawnedSoundPrefab = Instantiate(SoundPrefab, prefabPosition);
+            SoundPlay sound = spawnedSoundPrefab.GetComponent<SoundPlay>();
+            sound.clip = SoundClips[Random.Range(0, SoundClips.Count)];
+            sound.volume = GlobalSoundVolume;
+            sound.PlaySoundEffect();
         }
     }
+}
+
+[System.Serializable]
+public struct SoundCollection
+{
+    public List<AudioClip> soundPrefabs;
+    public string Name;
 }
