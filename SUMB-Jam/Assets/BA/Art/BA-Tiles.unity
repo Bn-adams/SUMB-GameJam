@@ -494,6 +494,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bank-UpLeft
       objectReference: {fileID: 0}
+    - target: {fileID: 7141937408245124592, guid: c4f8a2974fb1ee64c8ecbad742442698, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -550,6 +554,10 @@ PrefabInstance:
     - target: {fileID: 8840949137788390933, guid: abd2f5d70bb0910458c0b47d63a1fdba, type: 3}
       propertyPath: m_Name
       value: Bank-Right
+      objectReference: {fileID: 0}
+    - target: {fileID: 8840949137788390933, guid: abd2f5d70bb0910458c0b47d63a1fdba, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -791,6 +799,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bank-Left
       objectReference: {fileID: 0}
+    - target: {fileID: 4022322346320819385, guid: 6e2c0b38aadb2ba40a36e18281d675e3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -990,6 +1002,10 @@ PrefabInstance:
     - target: {fileID: 775028047428671163, guid: 4ecd251c53d746545a83f47fea2ead59, type: 3}
       propertyPath: m_Name
       value: Bank-UpRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 775028047428671163, guid: 4ecd251c53d746545a83f47fea2ead59, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4838575762154237363, guid: 4ecd251c53d746545a83f47fea2ead59, type: 3}
       propertyPath: m_LocalPosition.x
