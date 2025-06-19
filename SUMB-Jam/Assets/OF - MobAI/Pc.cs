@@ -270,18 +270,18 @@ public class Pc : MonoBehaviour
             UpdateHUD();
             spriteRenderer.color = Color.red;
 
-            if (Health <= 1)
-            {
-                if (!LoopLowHealthSoundsB)
-                {
-                    LoopLowHealthSoundsB = true;
-                    GameObject.Find("LoopingLowHealthSound").GetComponent<AudioSource>().Play();
-                }
-            }
-            else
-            {
-                GameObject.Find("LoopingLowHealthSound").GetComponent<AudioSource>().Stop();
-            }
+            //if (Health <= 1)
+            //{
+            //    if (!LoopLowHealthSoundsB)
+            //    {
+            //        LoopLowHealthSoundsB = true;
+            //        GameObject.Find("LoopingLowHealthSound").GetComponent<AudioSource>().Play();
+            //    }
+            //}
+            //else
+            //{
+            //    GameObject.Find("LoopingLowHealthSound").GetComponent<AudioSource>().Stop();
+            //}
 
             if (Health <= 0)
             {

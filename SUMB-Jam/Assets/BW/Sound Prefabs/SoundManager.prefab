@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f1adfc77554274096b12eceb2d9f9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SoundPrefab: {fileID: 2203809303039762550, guid: 3d8d44f6ab3d0e94c900ac4f5364fb86, type: 3}
+  SoundPrefab:
+  - {fileID: 2203809303039762550, guid: 3d8d44f6ab3d0e94c900ac4f5364fb86, type: 3}
   GlobalSoundVolume: 1
   soundCollections:
   - soundPrefabs:

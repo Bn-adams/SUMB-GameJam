@@ -331,7 +331,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
+  m_BackGroundColor: {r: 0.5803922, g: 0.57254905, b: 0.5803922, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -580,6 +580,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3566569370591346471, guid: de5cc4457197e504aa5d22b4c2720cce, type: 3}
+      propertyPath: GlobalSoundVolume
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -631,7 +635,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.075
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1055,9 +1059,9 @@ MonoBehaviour:
     Entity: {fileID: 252027963470139049, guid: b1b51751154edf047b17a6b4230bc1d2, type: 3}
   - EntityThreat: 3
     Entity: {fileID: 252027963470139049, guid: e539c2343cf8ed54b9612008003ea259, type: 3}
-  - EntityThreat: 7
-    Entity: {fileID: 252027963470139049, guid: b664b1567f0ad8448a83d26021a36455, type: 3}
   - EntityThreat: 6
+    Entity: {fileID: 252027963470139049, guid: b664b1567f0ad8448a83d26021a36455, type: 3}
+  - EntityThreat: 5
     Entity: {fileID: 252027963470139049, guid: c7a9e61ad6c792342b9164af8682fcc3, type: 3}
   BaseThreatMod: 5
 --- !u!4 &1506963466

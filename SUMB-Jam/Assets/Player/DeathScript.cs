@@ -36,7 +36,7 @@ public class DeathScript : MonoBehaviour
         list.Add("You lost your head, literally.");
         list.Add("Headless, but not fearless.");
 
-        Cursor.visible = true;
+        UnityEngine.Cursor.visible = true;
         HUD.SetActive(false);
         string output = "You beat:" + mapGen.RoomCounter.ToString() + " tiles";
         txt2.text = output;

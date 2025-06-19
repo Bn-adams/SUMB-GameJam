@@ -178,7 +178,7 @@ public class MapGen : MonoBehaviour
                     return NewPrefab6;
                 }
             default:
-                GameObject NewPrefab7 = Instantiate(Prefabs[Random.Range(0, Prefabs.Count)]);
+                GameObject NewPrefab7 = Instantiate(LeftPrefabs[Random.Range(0, Prefabs.Count)]);
                 return NewPrefab7;
         }
         

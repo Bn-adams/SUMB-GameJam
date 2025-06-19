@@ -29,6 +29,6 @@ public class ShopMenu : MonoBehaviour
     public void CloseShopMenu()
     {
         UI.SetActive(false);
-        Cursor.visible = false;
+        UnityEngine.Cursor.visible = false;
     }
 }

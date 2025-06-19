@@ -15,6 +15,6 @@ public class SoundPlay : MonoBehaviour
         audioSource.clip = clip;
         audioSource.volume = volume;
         audioSource.Play(); 
-        Destroy(gameObject, audioSource.clip.length);
+        Destroy(this.gameObject, audioSource.clip.length);
     }
 }
