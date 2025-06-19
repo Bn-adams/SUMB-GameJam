@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 414879125866125531}
   - component: {fileID: 6731438166990192805}
   m_Layer: 7
-  m_Name: WB-RangedEnemy 2
+  m_Name: WB-BHRanged
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
