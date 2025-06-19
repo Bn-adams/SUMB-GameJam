@@ -32,8 +32,6 @@ Transform:
   - {fileID: 548404859695286838}
   - {fileID: 5883647053900465420}
   - {fileID: 7183825141943941455}
-  - {fileID: 5086242134268189251}
-  - {fileID: 6000761955518057113}
   - {fileID: 4525588261960763931}
   - {fileID: 8407874306499207225}
   m_Father: {fileID: 3781242809831261624}
@@ -157,12 +155,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3018885546813593054}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.4, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -5.4000006, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1774790006685113368}
+  m_Father: {fileID: 3781242809831261624}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7361270491023923708
 SpriteRenderer:
@@ -412,12 +410,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6937004979742790415}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -5.4, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 5.4000006, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1774790006685113368}
+  m_Father: {fileID: 3781242809831261624}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5572030622327161306
 SpriteRenderer:
@@ -506,6 +504,8 @@ Transform:
   m_Children:
   - {fileID: 1774790006685113368}
   - {fileID: 2525973170419775473}
+  - {fileID: 5086242134268189251}
+  - {fileID: 6000761955518057113}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5407269222589559267
@@ -697,6 +697,10 @@ PrefabInstance:
     - target: {fileID: 5830842343954658281, guid: 2d83a6ffe78f1d245b75c608cb2883ba, type: 3}
       propertyPath: m_Name
       value: Straight-H
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190068458863929380, guid: 2d83a6ffe78f1d245b75c608cb2883ba, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

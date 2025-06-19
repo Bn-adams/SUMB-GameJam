@@ -43,8 +43,9 @@ public class Pc : MonoBehaviour
     public int PistolReloadDuration = 1;
     public float PistolProjSize = 1f;
     public bool Reload = false;
-    public int Ammo = 3;
-    public int MaxAmmo = 3;
+    public int Ammo = 1;
+    public int MaxAmmo = 1;
+    public int Total_Ammo = 6;
     public float ReloadDuration = 3f;
     // Defense
     public int Health = 3;
@@ -75,6 +76,12 @@ public class Pc : MonoBehaviour
         movementX = Input.GetAxisRaw("Horizontal");
         movementY = Input.GetAxisRaw("Vertical");
 
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Reload = true;
+            StartCoroutine(GUNReload());
+        }
+
         if (Input.GetButtonDown("Fire1"))
         {
             Attack();
@@ -84,6 +91,8 @@ public class Pc : MonoBehaviour
         {
             GUN();
         }
+
+        
     }
 
     private void Movement()
@@ -95,7 +104,7 @@ public class Pc : MonoBehaviour
 
     private void GUN()
     {
-        if (Reload != true)
+        if (Reload != true && Ammo > 0)
         {
             Ammo--;
             UpdateHUD();
@@ -154,7 +163,7 @@ public class Pc : MonoBehaviour
         GameObject.Find("HeartBar").GetComponent<HeartBar>().SetHealth(Health,MaxHealth);
         GameObject.Find("GoldCounterText").GetComponent<Text>().text = Gold.ToString();
         GameObject.Find("CurrentAmmoText").GetComponent<Text>().text = Ammo.ToString();
-        GameObject.Find("MaxAmmoText").GetComponent<Text>().text = MaxAmmo.ToString();
+        GameObject.Find("TotalAmmoText").GetComponent<Text>().text = Total_Ammo.ToString();
     }
 
 
@@ -168,7 +177,13 @@ public class Pc : MonoBehaviour
     private IEnumerator GUNReload()
     {
         yield return new WaitForSeconds(ReloadDuration);
-        Ammo = MaxAmmo;
+        int NewMag = MaxAmmo;
+        if (NewMag > Total_Ammo)
+        {
+            NewMag = Total_Ammo;
+        }
+        Total_Ammo -= NewMag;
+        Ammo = NewMag;
         UpdateHUD();
         Reload = false;
     }
