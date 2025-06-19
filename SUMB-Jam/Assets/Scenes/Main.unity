@@ -998,9 +998,9 @@ MonoBehaviour:
     Entity: {fileID: 252027963470139049, guid: b1b51751154edf047b17a6b4230bc1d2, type: 3}
   - EntityThreat: 3
     Entity: {fileID: 252027963470139049, guid: e539c2343cf8ed54b9612008003ea259, type: 3}
-  - EntityThreat: 6
+  - EntityThreat: 7
     Entity: {fileID: 252027963470139049, guid: b664b1567f0ad8448a83d26021a36455, type: 3}
-  - EntityThreat: 8
+  - EntityThreat: 6
     Entity: {fileID: 252027963470139049, guid: c7a9e61ad6c792342b9164af8682fcc3, type: 3}
   BaseThreatMod: 5
 --- !u!4 &1506963466
