@@ -175,6 +175,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2491205221621692964, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3664533209129865328, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
       propertyPath: mapGen
       value: 
@@ -223,6 +227,10 @@ PrefabInstance:
       propertyPath: DeathScreen
       value: 
       objectReference: {fileID: 109346852}
+    - target: {fileID: 8041760408575827825, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9197066253054076909, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
       propertyPath: m_Name
       value: Player
@@ -348,7 +356,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 1.75
+  orthographic size: 2
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -465,10 +473,12 @@ MonoBehaviour:
   - {fileID: 8246124850467041343, guid: a2ad66bdbb308fd4c8a8e86f3ef12753, type: 3}
   - {fileID: 8246124850467041343, guid: c49c94721de2e204b8ded2d0a07491e5, type: 3}
   - {fileID: 8246124850467041343, guid: a4ed13c276dd5aa4181fa58a046a0e74, type: 3}
+  - {fileID: 8246124850467041343, guid: 67a2a8f59c12b7641817b99df60fb37f, type: 3}
   RightPrefabs:
   - {fileID: 8246124850467041343, guid: 3ecde6f1c67d5684fad90ff89a4371b3, type: 3}
   - {fileID: 8246124850467041343, guid: c49c94721de2e204b8ded2d0a07491e5, type: 3}
   - {fileID: 8246124850467041343, guid: a4ed13c276dd5aa4181fa58a046a0e74, type: 3}
+  - {fileID: 8246124850467041343, guid: 19c5c919f4fc3f643878bc774081a62d, type: 3}
   ForwardsPrefabs:
   - {fileID: 8246124850467041343, guid: 044878b199720d6449bad18ac70554b4, type: 3}
   - {fileID: 8246124850467041343, guid: e0e3787976e8ff946b4754afd833901a, type: 3}
@@ -478,6 +488,8 @@ MonoBehaviour:
   - {fileID: 8246124850467041343, guid: cb900387997019a4da581e10cc3ccbde, type: 3}
   - {fileID: 8246124850467041343, guid: e6664cb2a50ea0140b017a7cd81803bc, type: 3}
   - {fileID: 8246124850467041343, guid: 448363e3cbca504488dcc6959836c6e9, type: 3}
+  - {fileID: 8246124850467041343, guid: a5c28e158bd870f4b95a68b93de0076b, type: 3}
+  - {fileID: 8246124850467041343, guid: 6e7dbd752060c954cbc8a27136932e10, type: 3}
   Prefabs:
   - {fileID: 8246124850467041343, guid: 044878b199720d6449bad18ac70554b4, type: 3}
   - {fileID: 8246124850467041343, guid: e0e3787976e8ff946b4754afd833901a, type: 3}
@@ -489,6 +501,10 @@ MonoBehaviour:
   - {fileID: 8246124850467041343, guid: e6664cb2a50ea0140b017a7cd81803bc, type: 3}
   - {fileID: 8246124850467041343, guid: 448363e3cbca504488dcc6959836c6e9, type: 3}
   - {fileID: 8246124850467041343, guid: a4ed13c276dd5aa4181fa58a046a0e74, type: 3}
+  - {fileID: 8246124850467041343, guid: 67a2a8f59c12b7641817b99df60fb37f, type: 3}
+  - {fileID: 8246124850467041343, guid: 19c5c919f4fc3f643878bc774081a62d, type: 3}
+  - {fileID: 8246124850467041343, guid: 6e7dbd752060c954cbc8a27136932e10, type: 3}
+  - {fileID: 8246124850467041343, guid: a5c28e158bd870f4b95a68b93de0076b, type: 3}
   HeaderNodes: []
   StartingPeice:
   - {fileID: 8246124850467041343, guid: 76b6c8c172b89234daf1dcabcac09acd, type: 3}
@@ -558,7 +574,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.075
   m_Pitch: 1
   Loop: 0
   Mute: 0
