@@ -216,8 +216,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7516769618913162902, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
-      propertyPath: playerSpeed
-      value: 1.5
+      propertyPath: Ammo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516769618913162902, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: MaxAmmo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516769618913162902, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+      propertyPath: PistolProjDamage
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9197066253054076909, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
       propertyPath: m_Name
