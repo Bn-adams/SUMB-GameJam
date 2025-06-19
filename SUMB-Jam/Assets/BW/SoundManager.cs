@@ -5,7 +5,7 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
 
-    public GameObject SoundPrefab;
+    public List<GameObject> SoundPrefab;
     public float GlobalSoundVolume;
 
     [SerializeField] List<SoundCollection> soundCollections;
@@ -13,13 +13,17 @@ public class SoundManager : MonoBehaviour
     public void SpawnSoundPrefab(Vector3 prefabPosition, string SoundCollection)
     {
         List<AudioClip> SoundClips = soundCollections.Find(x => x.Name == SoundCollection).soundPrefabs;
-        GameObject spawnedSoundPrefab = Instantiate(SoundPrefab, prefabPosition, Quaternion.identity);
-        if (spawnedSoundPrefab != null)
+        GameObject spawnedSoundPrefab = Instantiate(SoundPrefab[0], prefabPosition, Quaternion.identity);
+        if (spawnedSoundPrefab != null && SoundClips != null)
         {
             SoundPlay sound = spawnedSoundPrefab.GetComponent<SoundPlay>();
-            sound.clip = SoundClips[Random.Range(0, SoundClips.Count -1)];
-            sound.volume = GlobalSoundVolume;
-            sound.PlaySoundEffect();
+            if (sound != null && SoundClips.Count > 0)
+            {
+                sound.clip = SoundClips[Random.Range(0, SoundClips.Count - 1)];
+                sound.volume = GlobalSoundVolume;
+                sound.PlaySoundEffect();
+            }
+            
         }
         
     }
