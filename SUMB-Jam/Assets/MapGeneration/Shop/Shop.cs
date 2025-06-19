@@ -12,13 +12,19 @@ public class Shop : MonoBehaviour
     protected int seed = 123;
     private System.Random rng;
 
+    protected bool CanOpen = false;
+
+    protected GameObject GO_E_UI_Element;
 
     private void Start()
-    {   
+    {
         seed = Random.Range(0, 500);
         rng = new System.Random(seed);
         shopMenu = GameObject.Find("ShopMenu").GetComponent<ShopMenu>();
         shopManager = GameObject.Find("ShopManager").GetComponent<ShopManager>();
+
+        GO_E_UI_Element = shopManager.GetTheE();
+
         List<Upgrade> ChosenShelves = new List<Upgrade>();
         List<Upgrade> WorkingPool = new List<Upgrade>();
 
@@ -54,16 +60,32 @@ public class Shop : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if(Vector2.Distance(GameObject.Find("BlackBoard").GetComponent<BlackBoard>().player.transform.position,this.transform.position) < 10f)
+            if(CanOpen)
             {
                 OpenShopMenu();
             }
         }
     }
 
-    void OnMouseDown()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        OpenShopMenu();
+        if(other.gameObject.tag == "Player")
+        {
+            if (!GO_E_UI_Element.activeInHierarchy)
+                GO_E_UI_Element.SetActive(true);
+            CanOpen = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            if(GO_E_UI_Element.activeInHierarchy)
+                GO_E_UI_Element.SetActive(false);
+            CanOpen = false;
+            shopMenu.CloseShopMenu();
+        }
     }
 
     void OpenShopMenu()

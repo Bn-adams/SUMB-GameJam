@@ -18,7 +18,7 @@ public class MapGen : MonoBehaviour
 
     public List<GameObject> Prefabs = new List<GameObject>();
 
-    protected List<ConnectionNode> HeaderNodes = new List<ConnectionNode>();
+    public List<ConnectionNode> HeaderNodes = new List<ConnectionNode>();
 
     protected int DisplayLength = 2;
 
@@ -95,11 +95,22 @@ public class MapGen : MonoBehaviour
                 {
                     HeaderNodes.Remove(ExitNode);
                 }
-                List<ConnectionNode> Head_ExitNodes = HeaderNodes[i].AnchorPoint.parent.GetComponent<RoomTile>().ExitNodes;
-                foreach (ConnectionNode Node in Head_ExitNodes)
+                if (i > HeaderNodes.Count - 1)
                 {
-                    HeaderNodes.Remove(Node);
+                    Debug.Log("IOOB");
                 }
+                else
+                {
+                    Debug.Log("HeaderNode: "+HeaderNodes[i]);
+                    Debug.Log("RoomTile: " + HeaderNodes[i].AnchorPoint.parent.GetComponent<RoomTile>());
+                    Debug.Log("ExitNodes: " + HeaderNodes[i].AnchorPoint.parent.GetComponent<RoomTile>().ExitNodes);
+                    List<ConnectionNode> Head_ExitNodes = HeaderNodes[i].AnchorPoint.parent.GetComponent<RoomTile>().ExitNodes;
+                    foreach (ConnectionNode Node in Head_ExitNodes)
+                    {
+                        HeaderNodes.Remove(Node);
+                    }
+                }
+                
 
                 CurrentPeices.RemoveAt(0);
                 Destroy(gameObject);

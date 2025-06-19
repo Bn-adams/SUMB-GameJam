@@ -17,9 +17,24 @@ public class ShopManager : MonoBehaviour
 
     public Pc PlayerController;
 
+    public GameObject THE_E;
+
+    private void Start()
+    {
+        THE_E = GameObject.Find("E");
+        THE_E.SetActive(false);
+    }
+
     public List<Upgrade> GetPossibleStock()
     {
+        
         return shelves;
+    }
+
+    public GameObject GetTheE()
+    {
+        return THE_E;
+        
     }
 
 }
