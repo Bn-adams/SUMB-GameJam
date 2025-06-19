@@ -27,4 +27,9 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
     
+    public void ret2Menu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
 }
