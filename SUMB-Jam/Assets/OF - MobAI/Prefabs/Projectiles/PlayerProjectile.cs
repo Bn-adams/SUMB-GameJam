@@ -48,6 +48,7 @@ public class PlayerProjectile : MonoBehaviour
         else if (other.gameObject.tag == "Projectile")
         {
             Debug.Log("Hit Enemy projectile");
+            GameObject.Find("SoundManager").GetComponent<SoundManager>().SpawnSoundPrefab(transform.position, "ProjectileBlocked");
             if (!ThisIsSword)
                 Destroy(this.gameObject);
         }
@@ -72,7 +73,7 @@ public class PlayerProjectile : MonoBehaviour
         }
         else if(other.gameObject.tag == "Projectile")
         {
-            Debug.Log("Hit Enemy projectile");
+            GameObject.Find("SoundManager").GetComponent<SoundManager>().SpawnSoundPrefab(transform.position, "ProjectileBlocked");
             if (!ThisIsSword)
                 Destroy(this.gameObject);
         }

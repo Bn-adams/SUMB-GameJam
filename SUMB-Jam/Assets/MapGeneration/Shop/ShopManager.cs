@@ -45,6 +45,8 @@ public class SabreDmgUpgrade : Upgrade
     public override void DoUpgrade()
     {
         GameObject.Find("Player").GetComponent<Pc>().SabreProjDamage++;
+        Vector3 SpawnLocation = GameObject.Find("Player").transform.position;
+        GameObject.Find("SoundManager").GetComponent<SoundManager>().SpawnSoundPrefab(SpawnLocation, "SpendCoin");
         base.DoUpgrade();
     }
 }
