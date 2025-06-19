@@ -1610,6 +1610,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 2467726032724866745, guid: 4075b59b8aec0e7438eb0fc288e40ac1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7421867035084765705, guid: 4075b59b8aec0e7438eb0fc288e40ac1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
