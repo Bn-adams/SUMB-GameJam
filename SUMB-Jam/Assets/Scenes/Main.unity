@@ -293,6 +293,9 @@ PrefabInstance:
       propertyPath: m_UseFullKinematicContacts
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     - target: {fileID: 3883017926059923956, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
       propertyPath: m_LocalPosition.x
@@ -664,6 +667,9 @@ AudioChorusFilter:
   m_Delay: 24.67
   m_Rate: 0.8
   m_Depth: 0.03
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!1 &407585500
 GameObject:
