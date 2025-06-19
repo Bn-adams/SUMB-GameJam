@@ -35,6 +35,10 @@ public class PlayerController : MonoBehaviour
     public float MovementSpeed;
     public int Gold;
 
+    public SoundManager soundManager;
+
+    [SerializeField] AudioClip swordSwoosh;
+    [SerializeField] AudioClip[] swordClang;
 
     // Start is called before the first frame update
     void Start()
@@ -71,6 +75,8 @@ public class PlayerController : MonoBehaviour
         {
             attackHitBox.SetActive(true);
             Debug.Log("Start of attack!");
+
+            soundManager.SpawnSoundPrefab(transform.position, 0);
             StartCoroutine(Attacking());
         }
     }
@@ -90,9 +96,7 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator AttackCooldown()
     {
-        attackIsCoolingDown = true;
         yield return new WaitForSeconds(AttackCooldownDuration);
         attackIsCoolingDown = false;
-        
     }
 }
