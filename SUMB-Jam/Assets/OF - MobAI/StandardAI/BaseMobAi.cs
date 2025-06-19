@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using UnityEditor;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Rendering;
@@ -11,11 +12,11 @@ using static UnityEngine.GraphicsBuffer;
 
 public class BaseMobAi : MonoBehaviour
 {
-    public int H = 5;
-    public int AS = 2000;
-    public float MS = 5f;
-    public float AR = 1f;
-    public float VR = 3f;
+    [SerializeField] int H = 5;
+    [SerializeField] int AS = 2000;
+    [SerializeField] float MS = 5f;
+    [SerializeField] float AR = 1f;
+    [SerializeField] float VR = 3f;
 
     public bool isOnCoolDown;
     public bool isRanged; 
@@ -29,8 +30,11 @@ public class BaseMobAi : MonoBehaviour
     [HideInInspector] public int attackSpeed;
     [HideInInspector] public float attackRange;
     [HideInInspector] public float moveSpeed;
-    [HideInInspector] public bool reloading; 
+    [HideInInspector] public bool reloading;
 
+    [SerializeField] public Animator anim;
+    [SerializeField] public SpriteRenderer spriteRenderer;
+    
 
     private Node root;
 
@@ -56,9 +60,6 @@ public class BaseMobAi : MonoBehaviour
         agent.speed = 0;
         isOnCoolDown = false;
         reloading = false;
-
-
-
 
 
         //root node, we begin 
@@ -115,7 +116,7 @@ public class BaseMobAi : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-        Debug.Log("Enemy takes "+damage+" damage");
+        //Debug.Log("Enemy takes "+damage+" damage");
         if (health <= 0)
         {
             if (UnityEngine.Random.Range(0, 100) > 50)
@@ -165,6 +166,13 @@ public class BaseMobAi : MonoBehaviour
         await Task.Delay(timer);
     }
 
+    private async void AniDelayer(int timer)
+    {
+        await Task.Delay(timer);
+        anim.SetBool("IsEAttacking", false);
+        //anim.SetBool("IsERunning", true);
+    }
+
     public async void RangedCooldown(int timer)
     {
         await Task.Delay(timer);
@@ -180,8 +188,12 @@ public class BaseMobAi : MonoBehaviour
 
     void Update()
     {
-        Delayer(500);
         agent.SetDestination(bb.player.transform.position);
+        float direction = bb.player.transform.position.x - transform.position.x;
+        if (direction < 0)
+            spriteRenderer.flipX = false;
+        else if (direction > 0)
+            spriteRenderer.flipX = true;
     }
 
     public void FireProjectile()
@@ -193,12 +205,14 @@ public class BaseMobAi : MonoBehaviour
 
     public void SlashAttack()
     {
+        AniDelayer(500);
         var x = GameObject.Instantiate(WeaponSlash, this.transform.position, Quaternion.identity);
         x.GetComponent<Projectile>().target = bb.player;
         Vector2 direction = (bb.player.transform.position - transform.position).normalized;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         x.transform.rotation = Quaternion.Euler(0, 0, angle);
         x.GetComponent<Projectile>().takeAim();
+
     }
 
 }
@@ -214,10 +228,8 @@ public class CheckHealth : Node
 
     public override result Execute()
     {
-        Debug.Log("checking health");
         if(me.getHealth() <= 0)
         {
-            Debug.Log("destroyed");
             GameObject.Destroy(me.gameObject);
             return result.Success;
         }
@@ -244,8 +256,6 @@ public class CheckDetectionRange : Node
 
     public override result Execute()
     {
-        Debug.Log("checking range");
-
         distanceBetween = Mathf.Abs(bb.player.transform.position.magnitude - me.transform.position.magnitude);
         if (distanceBetween > 100f)
         {
@@ -281,8 +291,7 @@ public class MoveToPlayer : Node
 
         if (me.IsReloading() == false)
         {
-            Debug.Log("moving to player");
-
+            me.anim.SetBool("IsERunning", true); 
             me.agent.speed = me.getMoveSpeed();
             return result.Success;
         }
@@ -312,7 +321,8 @@ public class AttackPlayer : Node
         {
             if (me.isOnCoolDown == false)
             {
-                Debug.Log("attack");
+                //me.anim.SetBool("IsERunning", false);
+                me.anim.SetBool("IsEAttacking", true);
                 me.SlashAttack();
                 me.isOnCoolDown = true;
                 me.reloading = true;
@@ -321,7 +331,6 @@ public class AttackPlayer : Node
             }
             else
             {
-                Debug.Log("cooldown");
                 return result.Failure;
             }
         }
@@ -349,7 +358,6 @@ public class RangedAttack : Node
         if(me.isOnCoolDown == false)
         {
             me.FireProjectile();
-            Debug.Log("shoot");
             me.isOnCoolDown = true;
             me.reloading = true;
             me.RangedCooldown(me.getAttackSpeed());
