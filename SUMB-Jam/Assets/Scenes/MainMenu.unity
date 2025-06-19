@@ -267,9 +267,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 769521376239374196, guid: 4075b59b8aec0e7438eb0fc288e40ac1, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 876082e01be953548bed294d5aa63f0e, type: 2}
+    - target: {fileID: 769521376239374196, guid: 4075b59b8aec0e7438eb0fc288e40ac1, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -7444703738352412817, guid: 876082e01be953548bed294d5aa63f0e, type: 2}
+    - target: {fileID: 769521376239374196, guid: 4075b59b8aec0e7438eb0fc288e40ac1, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1541463540438743003, guid: 4075b59b8aec0e7438eb0fc288e40ac1, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 500
+      value: 550
       objectReference: {fileID: 0}
     - target: {fileID: 1936494443239647479, guid: 4075b59b8aec0e7438eb0fc288e40ac1, type: 3}
       propertyPath: m_Colors.m_PressedColor.b
@@ -391,12 +403,52 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2145493669323764914, guid: 4075b59b8aec0e7438eb0fc288e40ac1, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 876082e01be953548bed294d5aa63f0e, type: 2}
+    - target: {fileID: 2145493669323764914, guid: 4075b59b8aec0e7438eb0fc288e40ac1, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -7444703738352412817, guid: 876082e01be953548bed294d5aa63f0e, type: 2}
+    - target: {fileID: 2145493669323764914, guid: 4075b59b8aec0e7438eb0fc288e40ac1, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2467726032724866745, guid: 4075b59b8aec0e7438eb0fc288e40ac1, type: 3}
       propertyPath: m_Name
       value: MainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 5366803312562272677, guid: 4075b59b8aec0e7438eb0fc288e40ac1, type: 3}
       propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452476472940087931, guid: 4075b59b8aec0e7438eb0fc288e40ac1, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 876082e01be953548bed294d5aa63f0e, type: 2}
+    - target: {fileID: 5452476472940087931, guid: 4075b59b8aec0e7438eb0fc288e40ac1, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452476472940087931, guid: 4075b59b8aec0e7438eb0fc288e40ac1, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452476472940087931, guid: 4075b59b8aec0e7438eb0fc288e40ac1, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452476472940087931, guid: 4075b59b8aec0e7438eb0fc288e40ac1, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -7444703738352412817, guid: 876082e01be953548bed294d5aa63f0e, type: 2}
+    - target: {fileID: 5452476472940087931, guid: 4075b59b8aec0e7438eb0fc288e40ac1, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452476472940087931, guid: 4075b59b8aec0e7438eb0fc288e40ac1, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6944986124717646164, guid: 4075b59b8aec0e7438eb0fc288e40ac1, type: 3}
@@ -461,7 +513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7656737591391715959, guid: 4075b59b8aec0e7438eb0fc288e40ac1, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 500
+      value: 550
       objectReference: {fileID: 0}
     - target: {fileID: 7656737591391715959, guid: 4075b59b8aec0e7438eb0fc288e40ac1, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -553,7 +605,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8949875902111994457, guid: 4075b59b8aec0e7438eb0fc288e40ac1, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 500
+      value: 550
       objectReference: {fileID: 0}
     - target: {fileID: 8949875902111994457, guid: 4075b59b8aec0e7438eb0fc288e40ac1, type: 3}
       propertyPath: m_AnchoredPosition.y

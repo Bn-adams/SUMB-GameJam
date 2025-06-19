@@ -481,6 +481,7 @@ MonoBehaviour:
   - {fileID: 8246124850467041343, guid: 76b6c8c172b89234daf1dcabcac09acd, type: 3}
   ShopPeice:
   - {fileID: 8246124850467041343, guid: 6fc3814eae9470548bf5ee1d66ba2b62, type: 3}
+  RoomCounter: 0
   NavSurface: {fileID: 1602849361}
   MobSpawnManagement: {fileID: 1506963465}
 --- !u!4 &490784688
@@ -612,6 +613,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1158314444 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7393682627436545115, guid: f53fe9280d0e9c34bbdb4c62cfa11a26, type: 3}
+  m_PrefabInstance: {fileID: 42857003}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1465429885
 GameObject:
   m_ObjectHideFlags: 0

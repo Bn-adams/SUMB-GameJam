@@ -26,6 +26,7 @@ public class Pc : MonoBehaviour
     [SerializeField] List<GameObject> projectile = new List<GameObject>();
     [SerializeField] GameObject gunBase;
     [SerializeField] GameObject reticle;
+    [SerializeField] GameObject DeathScreen;
 
 
 
@@ -69,6 +70,17 @@ public class Pc : MonoBehaviour
     {
         HandleInput();
         Movement();
+        checkHealth();
+    }
+
+    private void checkHealth()
+    {
+        if (Health <= 0)
+        {
+            DeathScreen.SetActive(true);
+            aimer.SetActive(false);
+            playerSpeed = 0;
+        }
     }
 
     private void HandleInput()
