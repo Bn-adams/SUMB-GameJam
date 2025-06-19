@@ -30,7 +30,7 @@ public class MapGen : MonoBehaviour
 
     public int RoomCounter = 0;
 
-    protected int ShopCounter = 3;
+    protected int ShopCounter = 1;
 
     protected int ShopCounterMax = 3;
 

@@ -21,7 +21,6 @@ public class Pickup : MonoBehaviour
         new SilverCoinPickUP(){chance =25},
         new GoldCoinPickUP(){chance =5},
         new HeartPickUP(){chance =25},
-        new AmmoPickUP(){chance =10},
     };
 
     protected PickupPayloadBase ChosenPayload;
@@ -96,7 +95,7 @@ public class BronzeCoinPickUP : PickupPayloadBase
 
     public override void PickUP(Pc playerController)
     {
-        playerController.AddGold(Random.Range(1, 4));
+        playerController.AddGold(Random.Range(1, 3));
     }
 }
 
@@ -104,7 +103,7 @@ public class SilverCoinPickUP : PickupPayloadBase
 {
     public override void PickUP(Pc playerController)
     {
-        playerController.AddGold(Random.Range(5, 9));
+        playerController.AddGold(Random.Range(4, 8));
     }
 }
 
@@ -112,7 +111,7 @@ public class GoldCoinPickUP : PickupPayloadBase
 {
     public override void PickUP(Pc playerController)
     {
-        playerController.AddGold(Random.Range(10, 16));
+        playerController.AddGold(Random.Range(10, 15));
     }
 }
 
@@ -132,14 +131,3 @@ public class HeartPickUP : PickupPayloadBase
         
     }
 }
-
-public class AmmoPickUP : PickupPayloadBase
-{
-    public override void PickUP(Pc playerController)
-    {
-        playerController.Total_Ammo += Random.Range(1,3);
-        playerController.UpdateHUD();
-
-    }
-}
-

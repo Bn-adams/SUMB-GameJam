@@ -47,9 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e507ea314e789946ad7cee75669d05c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  H: 3
+  H: 5
   AS: 500
-  MS: 0.5
+  MS: 0.75
   AR: 0.5
   VR: 5
   isOnCoolDown: 0
@@ -135,9 +135,9 @@ GameObject:
   - component: {fileID: 253629632124684701}
   - component: {fileID: 1499812127545478011}
   - component: {fileID: 3392259806229060812}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Holder
-  m_TagString: Enemy
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -391,4 +391,4 @@ PolygonCollider2D:
       - {x: 1.135, y: -3.235}
       - {x: 1.235, y: -3.215}
       - {x: 1.295, y: -3.185}
-  m_UseDelaunayMesh: 1
+  m_UseDelaunayMesh: 0

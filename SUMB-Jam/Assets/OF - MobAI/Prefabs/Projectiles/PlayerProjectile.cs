@@ -38,10 +38,7 @@ public class PlayerProjectile : MonoBehaviour
 
         if (other.gameObject.tag == "Enemy")
         {
-            if (other.gameObject.GetComponent<BaseMobAi>() != null)
-            {
-                other.gameObject.GetComponent<BaseMobAi>().TakeDamage(Damage);
-            }
+            other.gameObject.GetComponent<BaseMobAi>().TakeDamage(Damage);
             if (!ThisIsSword)
                 Destroy(this.gameObject);
         }
@@ -63,10 +60,7 @@ public class PlayerProjectile : MonoBehaviour
 
         if (other.gameObject.tag == "Enemy")
         {
-            if (other.gameObject.GetComponent<BaseMobAi>() != null)
-            {
-                other.gameObject.GetComponent<BaseMobAi>().TakeDamage(Damage);
-            }
+            other.gameObject.GetComponent<BaseMobAi>().TakeDamage(Damage);
             if (!ThisIsSword)
                 Destroy(this.gameObject);
         }
