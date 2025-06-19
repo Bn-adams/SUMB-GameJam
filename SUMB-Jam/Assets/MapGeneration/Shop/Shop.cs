@@ -63,6 +63,7 @@ public class Shop : MonoBehaviour
             if(CanOpen)
             {
                 OpenShopMenu();
+                Cursor.visible = true;
             }
         }
     }
