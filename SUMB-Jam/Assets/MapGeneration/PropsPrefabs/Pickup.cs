@@ -87,7 +87,7 @@ public abstract class PickupPayloadBase
 
     public virtual void PickUP(Pc playerController)
     {
-
+        GameObject.Find("SoundManager").GetComponent<SoundManager>().SpawnSoundPrefab(playerController.transform.position, "PickupCoin");
     }
 }
 
@@ -97,6 +97,7 @@ public class BronzeCoinPickUP : PickupPayloadBase
     public override void PickUP(Pc playerController)
     {
         playerController.AddGold(Random.Range(1, 4));
+        base.PickUP(playerController);
     }
 }
 
@@ -105,6 +106,7 @@ public class SilverCoinPickUP : PickupPayloadBase
     public override void PickUP(Pc playerController)
     {
         playerController.AddGold(Random.Range(5, 9));
+        base.PickUP(playerController);
     }
 }
 
@@ -113,6 +115,7 @@ public class GoldCoinPickUP : PickupPayloadBase
     public override void PickUP(Pc playerController)
     {
         playerController.AddGold(Random.Range(10, 16));
+        base.PickUP(playerController);
     }
 }
 
@@ -129,7 +132,7 @@ public class HeartPickUP : PickupPayloadBase
         {
             playerController.UpdateHUD();
         }
-        
+        GameObject.Find("SoundManager").GetComponent<SoundManager>().SpawnSoundPrefab(playerController.transform.position, "HealthPickup");
     }
 }
 
@@ -139,7 +142,7 @@ public class AmmoPickUP : PickupPayloadBase
     {
         playerController.Total_Ammo += Random.Range(1,3);
         playerController.UpdateHUD();
-
+        GameObject.Find("SoundManager").GetComponent<SoundManager>().SpawnSoundPrefab(playerController.transform.position, "AmmoPickup");
     }
 }
 

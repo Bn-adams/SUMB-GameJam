@@ -49,6 +49,7 @@ public class Projectile : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             target.GetComponent<Pc>().TakeDamage(1);
+            Destroy(this.gameObject);
         }
         if(!ThisIsSword)
             Destroy(this.gameObject);
