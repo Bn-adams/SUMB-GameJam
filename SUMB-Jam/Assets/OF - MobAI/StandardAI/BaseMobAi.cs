@@ -54,6 +54,8 @@ public class BaseMobAi : MonoBehaviour
         agent.updateRotation = false;
 
         health = H;
+
+        // The MS between each attack
         attackSpeed = AS;
         attackRange = AR;
         moveSpeed = MS;
